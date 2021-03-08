@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\UniProjects\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\UniProjects\\WebAPI\\RSTLog-WebAPI\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\UniProjects\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\UniProjects\\WebAPI\\RSTLog-WebAPI\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UniProjects\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\UniProjects\\WebAPI\\RSTLog-WebAPI\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\UniProjects\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\UniProjects\\WebAPI\\RSTLog-WebAPI\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\jack.KUDOS-SOFTWARE\\.nuget\\packages\\",
-        "outputPath": "C:\\UniProjects\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\UniProjects\\WebAPI\\RSTLog-WebAPI\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -45,6 +45,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

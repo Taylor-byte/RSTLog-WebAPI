@@ -28,9 +28,18 @@ namespace WebAPI
         {
 
             services.AddControllers();
+
+            services.AddCors(o => {
+                o.AddPolicy("Cors Policy", builder =>
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
+            });
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RST Log WebAPI", Version = "v1" });
             });
         }
 
@@ -45,6 +54,8 @@ namespace WebAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("Cors Policy");
 
             app.UseRouting();
 

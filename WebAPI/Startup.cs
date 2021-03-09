@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Models;
+using AutoMapper;
+using WebAPI.Configurations;
 
 namespace WebAPI
 {
@@ -40,6 +42,8 @@ namespace WebAPI
                 .AllowAnyHeader()
                 );
             });
+
+            services.AddAutoMapper(typeof(MapperInitialiser));
 
             services.AddSwaggerGen(c =>
             {

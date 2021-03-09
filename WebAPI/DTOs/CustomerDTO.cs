@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.Models
+namespace WebAPI.DTOs
 {
-    public class Customer
+    public class CreateCustomerDTO
     {
-        [Key]
-        public int Id { get; set; }
-        [Column(TypeName = "nvarchar(100)")]
+
+        [Required]
         public string Name { get; set; }
 
         public int? HoursPurchased { get; set; }
@@ -26,8 +24,16 @@ namespace WebAPI.Models
 
         public bool Paid { get; set; }
 
-        public virtual IList<Hours> Hours { get; set; }
-
-        public virtual IList<Days> Days { get; set; }
     }
+
+    public class CustomerDTO : CreateCustomerDTO
+    {
+        public int Id { get; set; }
+
+        public IList<HoursDTO> Hours { get; set; }
+
+        public IList<DaysDTO> Days { get; set; }
+    }
+
+
 }

@@ -17,6 +17,7 @@ using AutoMapper;
 using WebAPI.Configurations;
 using WebAPI.IRepository;
 using WebAPI.Repository;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebAPI
 {
@@ -36,6 +37,9 @@ namespace WebAPI
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("sqlconnection"))
             );
+
+            services.AddAuthentication();
+            services.ConfigureIdentity();
 
             services.AddCors(o => {
                 o.AddPolicy("Cors Policy", builder =>

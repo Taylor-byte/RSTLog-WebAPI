@@ -23,6 +23,10 @@ namespace WebAPI.Configurations
 
             CreateMap<Employee, EmployeeDTO>().ReverseMap();
             CreateMap<Employee, CreateEmployeeDTO>().ReverseMap();
+
+            CreateMap<ApiUser, UserDTO>().ReverseMap();
+
+
         }
     }
 }

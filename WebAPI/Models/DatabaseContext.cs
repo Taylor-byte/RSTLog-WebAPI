@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Models
 {
-    public class DatabaseContext : IdentityDbContext
+    public class DatabaseContext : IdentityDbContext<ApiUser>
     {
 
         public DatabaseContext(DbContextOptions options) : base(options)

@@ -18,6 +18,7 @@ using WebAPI.Configurations;
 using WebAPI.IRepository;
 using WebAPI.Repository;
 using Microsoft.AspNetCore.Identity;
+using WebAPI.Services;
 
 namespace WebAPI
 {
@@ -40,6 +41,7 @@ namespace WebAPI
 
             services.AddAuthentication();
             services.ConfigureIdentity();
+            services.ConfigureJWT(Configuration);
 
             services.AddCors(o => {
                 o.AddPolicy("Cors Policy", builder =>
@@ -52,6 +54,7 @@ namespace WebAPI
             services.AddAutoMapper(typeof(MapperInitialiser));
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAuthManager, AuthManager>();
 
             services.AddSwaggerGen(c =>
             {

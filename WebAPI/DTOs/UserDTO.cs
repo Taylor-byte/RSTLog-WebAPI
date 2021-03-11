@@ -24,5 +24,7 @@ namespace WebAPI.DTOs
         [Required]
         public string LastName { get; set; }
 
+        public ICollection<string> Roles { get; set; }
+
     }
 }

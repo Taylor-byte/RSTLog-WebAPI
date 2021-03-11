@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Configurations.Entities;
 
 namespace WebAPI.Models
 {
@@ -22,6 +23,13 @@ namespace WebAPI.Models
         public DbSet<Hours> Hours { get; set; }
 
         public DbSet<Employee> Employee { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.ApplyConfiguration(new RoleConfiguration());
+        }
 
 
 

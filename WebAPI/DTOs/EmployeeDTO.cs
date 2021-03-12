@@ -14,6 +14,11 @@ namespace WebAPI.DTOs
         public string Name { get; set; }
     }
 
+    public class UpdateEmployeeDTO : CreateEmployeeDTO
+    {
+
+    }
+
     public class EmployeeDTO : CreateEmployeeDTO
     {
         public int Id { get; set; }

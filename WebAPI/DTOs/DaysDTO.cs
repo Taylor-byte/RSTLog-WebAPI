@@ -16,6 +16,11 @@ namespace WebAPI.DTOs
 
     }
 
+    public class UpdateDaysDTO : CreateDaysDTO
+    {
+
+    }
+
     public class DaysDTO : CreateDaysDTO
     {
         public int Id { get; set; }

@@ -26,6 +26,13 @@ namespace WebAPI.DTOs
 
     }
 
+    public class UpdateCustomerDTO : CreateCustomerDTO
+    {
+        public IList<CreateHoursDTO> Hours { get; set; }
+
+        public IList<CreateDaysDTO> Days { get; set; }
+    }
+
     public class CustomerDTO : CreateCustomerDTO
     {
         public int Id { get; set; }

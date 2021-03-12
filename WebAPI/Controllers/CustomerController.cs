@@ -68,7 +68,7 @@ namespace WebAPI.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -98,6 +98,74 @@ namespace WebAPI.Controllers
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
 
+        }
+
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] UpdateCustomerDTO customerDTO)
+        {
+            if(!ModelState.IsValid || id < 1)
+            {
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateCustomer)}");
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var customer = await _unitOfWork.Customer.Get(q => q.Id == id);
+                if (customer == null)
+                {
+                    _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateCustomer)}");
+                    return BadRequest("Data submitted is invalid");
+                }
+
+                _mapper.Map(customerDTO, customer);
+                _unitOfWork.Customer.Update(customer);
+                await _unitOfWork.Save();
+
+                return NoContent();
+            }
+            catch (Exception ex )
+            {
+
+                _logger.LogError(ex, $"Something went wrong in the {nameof(UpdateCustomer)}");
+                return StatusCode(500, "Internal Server Error. Please try again later.");
+            }
+        }
+
+        [HttpDelete("id:int")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeleteCustomer(int id)
+        {
+            if (id < 1)
+            {
+                _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteCustomer)}");
+                return BadRequest();
+            }
+
+            try
+            {
+                var customer = await _unitOfWork.Customer.Get(q => q.Id == id);
+                if (customer == null)
+                {
+                    _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteCustomer)}");
+                    return BadRequest("Data submitted is invalid");
+                }
+
+                await _unitOfWork.Customer.Delete(id);
+                await _unitOfWork.Save();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+
+                _logger.LogError(ex, $"Something went wrong in the {nameof(DeleteCustomer)}");
+                return StatusCode(500, "Internal Server Error. Please try again later.");
+            }
         }
 
     }

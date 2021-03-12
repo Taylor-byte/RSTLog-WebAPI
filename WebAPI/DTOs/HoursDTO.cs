@@ -19,6 +19,11 @@ namespace WebAPI.DTOs
         
     }
 
+    public class UpdateHoursDTO : CreateHoursDTO
+    {
+
+    }
+
     public class HoursDTO : CreateHoursDTO
     {
         public int Id { get; set; }

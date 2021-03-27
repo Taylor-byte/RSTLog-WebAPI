@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using WebAPI.DTOs;
+//using X.PagedList;
+using WebAPI.Models;
+using WebAPI.Paging;
 
 namespace WebAPI.IRepository
 {
@@ -13,6 +17,13 @@ namespace WebAPI.IRepository
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             List<string> includes = null
         );
+
+        Task<PagedList<Customer>> GetCustomers(RequestParams requestParams);
+
+        //Task<IPagedList> GetPagedList(
+        //    RequestParams requestParams,
+        //    List<string> includes = null
+        //    );
 
         Task<T> Get(Expression<Func<T, bool>> expression, List<string> includes = null);
 

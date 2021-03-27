@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using WebAPI.DTOs;
 using WebAPI.IRepository;
 using WebAPI.Models;
+using System.Text.Json;
 
 namespace WebAPI.Controllers
 {
@@ -35,11 +37,16 @@ namespace WebAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetCustomers()
+        public async Task<IActionResult> GetCustomers([FromQuery] RequestParams requestParams)
         {
             try
             {
-                var customers = await _unitOfWork.Customer.GetAll();
+                var customers = await _unitOfWork.Customer.GetCustomers(requestParams);
+                //new
+                string param = System.Text.Json.JsonSerializer.Serialize(requestParams);
+                Response.Headers.Add("X-Pagination", param);
+                Response.Headers.Add("Access-Control-Expose-Headers", "X-Pagination");
+
                 var results = _mapper.Map<IList<CustomerDTO>>(customers);
                 return Ok(results);
             }

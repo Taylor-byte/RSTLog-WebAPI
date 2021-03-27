@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using WebAPI.DTOs;
 using WebAPI.IRepository;
 using WebAPI.Models;
+//using X.PagedList;
+using WebAPI.Paging;
+using WebAPI.Repository.RepositoryExtensions;
 
 namespace WebAPI.Repository
 {
@@ -67,8 +71,50 @@ namespace WebAPI.Repository
                 }
             }
 
+            if(orderBy != null)
+            {
+                query = orderBy(query);
+            }
+
             return await query.AsNoTracking().ToListAsync();
         }
+
+        public async Task<PagedList<Customer>> GetCustomers(RequestParams requestParams)
+        {
+            var customers = await _context.Customer
+                .Search(requestParams.SearchTerm)
+                .ToListAsync();
+
+            return PagedList<Customer>
+                .ToPagedList(customers, requestParams.PageNumber, requestParams.PageSize);
+
+        }
+
+
+
+        //public Task<X.PagedList.IPagedList> GetPagedList(RequestParams requestParams, List<string> includes = null)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public async Task<IPagedList> GetPagedList(RequestParams requestParams, List<string> includes = null)
+        //{
+        //    IQueryable<T> query = _db;
+
+        //    if (includes != null)
+        //    {
+        //        //include foreign keys in get
+        //        foreach (var includeProperty in includes)
+        //        {
+        //            query = query.Include(includeProperty);
+        //        }
+        //    }
+
+
+        //    return await query.AsNoTracking()
+        //        .ToPagedListAsync(requestParams.PageNumber, requestParams.PageSize);
+
+        //}
 
         public async Task Insert(T entity)
         {
@@ -85,5 +131,10 @@ namespace WebAPI.Repository
             _db.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
         }
+
+        //Task<X.PagedList.PagedList<CustomerDTO>> IGenericRepository<T>.GetCustomers(RequestParams requestParams)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -11,6 +11,7 @@ namespace WebAPI.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage = "Name Field is required")]
         [Column(TypeName = "nvarchar(100)")]
         public string Name { get; set; }
 

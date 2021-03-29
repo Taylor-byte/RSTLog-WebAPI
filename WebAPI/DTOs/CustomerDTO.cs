@@ -24,6 +24,8 @@ namespace WebAPI.DTOs
 
         public bool Paid { get; set; }
 
+        
+
     }
 
     public class UpdateCustomerDTO : CreateCustomerDTO

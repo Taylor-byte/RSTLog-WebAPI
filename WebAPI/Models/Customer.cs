@@ -18,13 +18,15 @@ namespace WebAPI.Models
 
         public int? HoursRemaining { get; set; }
 
-        public DateTime Invoiced { get; set; }
+        public DateTime? Invoiced { get; set; }
 
         public string Notes { get; set; }
 
         public int? OnsitePurchased { get; set; }
 
         public bool Paid { get; set; }
+
+        public string InvoicedDate { get; set; }
 
         public virtual IList<Hours> Hours { get; set; }
 

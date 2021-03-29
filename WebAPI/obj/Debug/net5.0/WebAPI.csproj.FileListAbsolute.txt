@@ -84,3 +84,4 @@ C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\obj\Debug\net5.0\WebAPI.dll
 C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
+C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll

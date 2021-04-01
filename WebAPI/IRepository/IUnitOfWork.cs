@@ -10,9 +10,9 @@ namespace WebAPI.IRepository
     {
         IGenericRepository<Customer> Customer { get; }
 
-        IGenericRepository<Days> Days { get; }
+        IGenericRepository<Audit> Audit { get; }
 
-        IGenericRepository<Hours> Hours { get; }
+        IGenericRepository<TransType> TransType { get; }
 
         IGenericRepository<Employee> Employee { get; }
 

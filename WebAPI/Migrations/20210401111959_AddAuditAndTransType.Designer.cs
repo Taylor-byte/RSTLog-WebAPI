@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Models;
 
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210401111959_AddAuditAndTransType")]
+    partial class AddAuditAndTransType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,22 +50,22 @@ namespace WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "10501f1b-cbec-4bda-aa52-8210702e5ea6",
-                            ConcurrencyStamp = "bdabc4bc-f94d-44ad-9710-679432970a35",
+                            Id = "1848a37c-f6b0-4104-8027-72bb9c462cb4",
+                            ConcurrencyStamp = "0b7fe92d-21b1-45f2-8f82-c58c6bef9d38",
                             Name = "Lookup",
                             NormalizedName = "LOOKUP"
                         },
                         new
                         {
-                            Id = "026916ef-3133-4e64-a843-6195f2739cdf",
-                            ConcurrencyStamp = "ed49e65e-0e74-429d-8671-fa5fec7e8685",
+                            Id = "ee35b854-9e9f-4351-b3b9-3bb604e324b3",
+                            ConcurrencyStamp = "495087b7-e1a8-4932-b351-ab63c86a9f42",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "5bcc3d65-1252-42c5-ba0e-b94849d83408",
-                            ConcurrencyStamp = "43c6d773-fb91-46d3-825a-219795be4f1f",
+                            Id = "7c172d48-47c7-470e-80eb-fba791e1910e",
+                            ConcurrencyStamp = "a44b9ab6-e144-41e7-9285-92c942e9a2f8",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -317,6 +319,29 @@ namespace WebAPI.Migrations
                     b.ToTable("Customer");
                 });
 
+            modelBuilder.Entity("WebAPI.Models.Days", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateComplete")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Days");
+                });
+
             modelBuilder.Entity("WebAPI.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -330,6 +355,29 @@ namespace WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Hours", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateComplete")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Hours");
                 });
 
             modelBuilder.Entity("WebAPI.Models.TransType", b =>
@@ -425,9 +473,35 @@ namespace WebAPI.Migrations
                     b.Navigation("TransType");
                 });
 
+            modelBuilder.Entity("WebAPI.Models.Days", b =>
+                {
+                    b.HasOne("WebAPI.Models.Customer", "Customer")
+                        .WithMany("Days")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Hours", b =>
+                {
+                    b.HasOne("WebAPI.Models.Customer", "Customer")
+                        .WithMany("Hours")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("WebAPI.Models.Customer", b =>
                 {
                     b.Navigation("Audit");
+
+                    b.Navigation("Days");
+
+                    b.Navigation("Hours");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Employee", b =>

@@ -13,11 +13,15 @@ namespace WebAPI.Repository
 
         private IGenericRepository<Customer> _customer;
 
-        private IGenericRepository<Days> _days;
+        //private IGenericRepository<Days> _days;
 
-        private IGenericRepository<Hours> _hours;
+       // private IGenericRepository<Hours> _hours;
 
-        private IGenericRepository<Employee> _employee; 
+        private IGenericRepository<Employee> _employee;
+
+        private IGenericRepository<Audit> _audit;
+
+        private IGenericRepository<TransType> _transType;
 
         public UnitOfWork(DatabaseContext context)
         {
@@ -29,11 +33,12 @@ namespace WebAPI.Repository
 
         public IGenericRepository<Customer> Customer => _customer ??= new GenericRepository<Customer>(_context);
 
-        public IGenericRepository<Days> Days => _days ??= new GenericRepository<Days>(_context);
+        public IGenericRepository<Audit> Audit => _audit ??= new GenericRepository<Audit>(_context);
 
-        public IGenericRepository<Hours> Hours => _hours ??= new GenericRepository<Hours>(_context);
+        public IGenericRepository<TransType> TransType => _transType ??= new GenericRepository<TransType>(_context);
 
         public IGenericRepository<Employee> Employee => _employee ??= new GenericRepository<Employee>(_context);
+
 
         public void Dispose()
         {

@@ -15,5 +15,7 @@ namespace WebAPI.Models
         [Column(TypeName = "nvarchar(50)")]
         public string Name { get; set; }
 
+        public virtual IList<Audit> Audit { get; set; }
+
     }
 }

@@ -1,0 +1,822 @@
+21-04-01 11:50:34.391 +01:00 [INF] Application Is Starting
+21-04-01 11:50:58.032 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 11:50:59.625 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 11:50:59.626 +01:00 [INF] Hosting environment: Development
+21-04-01 11:50:59.626 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 11:51:01.572 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 11:51:02.037 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 469.7809ms
+21-04-01 11:51:02.180 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/swagger-ui.css - -
+21-04-01 11:51:02.304 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js - -
+21-04-01 11:51:02.304 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/swagger-ui-bundle.js - -
+21-04-01 11:51:02.598 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+21-04-01 11:51:02.598 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+21-04-01 11:51:02.605 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+21-04-01 11:51:02.608 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/swagger-ui.css - - - 200 142933 text/css 428.0112ms
+21-04-01 11:51:02.616 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 312.0464ms
+21-04-01 11:51:02.669 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 364.5040ms
+21-04-01 11:51:04.152 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 11:51:04.584 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 11:51:04.586 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 11:51:05.185 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1033.6563ms
+21-04-01 11:51:06.824 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 2240.2303ms
+21-04-01 11:51:06.839 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 2253.1034ms
+21-04-01 11:53:04.680 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 11:53:04.695 +01:00 [INF] CORS policy execution successful.
+21-04-01 11:53:04.837 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 11:53:05.154 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 11:53:10.242 +01:00 [ERR] Something went wrong in the GetCustomers
+System.InvalidOperationException: The relationship from 'Audit.ApiUser' to 'ApiUser.Audit' with foreign key properties {'ApiUserId' : int} cannot target the primary key {'Id' : string} because it is not compatible. Configure a principal key or a set of compatible foreign key properties for this relationship.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNoShadowKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at WebAPI.Repository.GenericRepository`1..ctor(DatabaseContext context) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 25
+   at WebAPI.Repository.UnitOfWork.get_Customer() in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\UnitOfWork.cs:line 30
+   at WebAPI.Controllers.CustomerController.GetCustomers(RequestParams requestParams) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 44
+21-04-01 11:53:10.477 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 11:53:10.495 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 5328.8266ms
+21-04-01 11:53:10.497 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 11:53:10.505 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 500 - text/plain;+charset=utf-8 5824.9782ms
+21-04-01 11:53:15.925 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 11:53:15.926 +01:00 [INF] CORS policy execution successful.
+21-04-01 11:53:15.944 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 11:53:15.947 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 11:53:16.624 +01:00 [ERR] Something went wrong in the GetCustomers
+System.InvalidOperationException: The relationship from 'Audit.ApiUser' to 'ApiUser.Audit' with foreign key properties {'ApiUserId' : int} cannot target the primary key {'Id' : string} because it is not compatible. Configure a principal key or a set of compatible foreign key properties for this relationship.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNoShadowKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at WebAPI.Repository.GenericRepository`1..ctor(DatabaseContext context) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 25
+   at WebAPI.Repository.UnitOfWork.get_Customer() in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\UnitOfWork.cs:line 30
+   at WebAPI.Controllers.CustomerController.GetCustomers(RequestParams requestParams) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 44
+21-04-01 11:53:16.627 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 11:53:16.628 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 681.4203ms
+21-04-01 11:53:16.628 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 11:53:16.630 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 500 - text/plain;+charset=utf-8 704.5921ms
+21-04-01 12:00:12.571 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 12:00:12.571 +01:00 [INF] CORS policy execution successful.
+21-04-01 12:00:12.571 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 12:00:12.571 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 12:00:12.843 +01:00 [ERR] Something went wrong in the GetCustomers
+System.InvalidOperationException: The relationship from 'Audit.ApiUser' to 'ApiUser.Audit' with foreign key properties {'ApiUserId' : int} cannot target the primary key {'Id' : string} because it is not compatible. Configure a principal key or a set of compatible foreign key properties for this relationship.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNoShadowKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IModel model)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at WebAPI.Repository.GenericRepository`1..ctor(DatabaseContext context) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 25
+   at WebAPI.Repository.UnitOfWork.get_Customer() in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\UnitOfWork.cs:line 30
+   at WebAPI.Controllers.CustomerController.GetCustomers(RequestParams requestParams) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 44
+21-04-01 12:00:12.846 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 12:00:12.847 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 275.1906ms
+21-04-01 12:00:12.847 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 12:00:12.848 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 500 - text/plain;+charset=utf-8 277.1959ms
+21-04-01 13:12:54.557 +01:00 [INF] Application Is Starting
+21-04-01 13:13:06.537 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 13:13:09.363 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 13:13:09.363 +01:00 [INF] Hosting environment: Development
+21-04-01 13:13:09.363 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 13:13:09.487 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger - -
+21-04-01 13:13:09.755 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 13:13:09.880 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger - - - 301 - - 398.4651ms
+21-04-01 13:13:10.546 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 790.8201ms
+21-04-01 13:13:11.792 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 13:13:12.158 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 13:13:12.167 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 13:13:12.458 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 666.2427ms
+21-04-01 13:13:13.059 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 891.7365ms
+21-04-01 13:13:13.069 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 910.7923ms
+21-04-01 13:18:16.955 +01:00 [INF] Application Is Starting
+21-04-01 13:18:20.622 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 13:18:21.533 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 13:18:21.534 +01:00 [INF] Hosting environment: Development
+21-04-01 13:18:21.534 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 13:18:21.708 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 13:18:22.094 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 390.6685ms
+21-04-01 13:18:22.996 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 13:18:23.089 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 13:18:23.094 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 13:18:24.094 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 999.3643ms
+21-04-01 13:18:24.094 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 1004.8232ms
+21-04-01 13:18:24.094 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1098.0845ms
+21-04-01 15:30:46.311 +01:00 [INF] Application Is Starting
+21-04-01 15:30:50.669 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 15:30:52.108 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 15:30:52.108 +01:00 [INF] Hosting environment: Development
+21-04-01 15:30:52.109 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 15:30:52.299 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 15:30:52.909 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 603.5856ms
+21-04-01 15:30:53.907 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 15:30:54.138 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 15:30:54.139 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 15:30:54.696 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 789.0413ms
+21-04-01 15:30:54.719 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 580.5622ms
+21-04-01 15:30:54.727 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 589.0523ms
+21-04-01 15:35:05.170 +01:00 [INF] Application Is Starting
+21-04-01 15:35:08.915 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 15:35:10.526 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 15:35:10.527 +01:00 [INF] Hosting environment: Development
+21-04-01 15:35:10.527 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 15:35:10.673 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 15:35:11.151 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 482.5529ms
+21-04-01 15:35:19.571 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 15:35:19.932 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 15:35:19.974 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 15:35:20.683 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 750.9164ms
+21-04-01 15:35:20.695 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 720.3824ms
+21-04-01 15:35:20.833 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1262.6573ms
+21-04-01 15:37:04.347 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 15:37:04.356 +01:00 [INF] CORS policy execution successful.
+21-04-01 15:37:04.440 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 15:37:05.090 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 15:37:15.237 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 15:37:32.633 +01:00 [INF] Executed DbCommand (3,841ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 15:37:33.309 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 15:37:35.764 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 30659.9703ms
+21-04-01 15:37:35.766 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 15:37:35.775 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 31428.3671ms
+21-04-01 15:37:47.760 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 15:37:47.761 +01:00 [INF] CORS policy execution successful.
+21-04-01 15:37:47.766 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 15:37:47.779 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 15:37:47.860 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 15:37:48.684 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 15:37:49.176 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 15:37:49.176 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 1397.6169ms
+21-04-01 15:37:49.177 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 15:37:49.178 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 500 - text/plain;+charset=utf-8 1418.0026ms
+21-04-01 15:37:51.249 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 15:37:51.249 +01:00 [INF] CORS policy execution successful.
+21-04-01 15:37:51.250 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 15:37:51.250 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 15:37:51.286 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 15:37:52.078 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 15:37:52.080 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 15:37:52.080 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 829.9939ms
+21-04-01 15:37:52.080 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 15:37:52.082 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 500 - text/plain;+charset=utf-8 849.2325ms
+21-04-01 15:38:28.218 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 15:38:28.219 +01:00 [INF] CORS policy execution successful.
+21-04-01 15:38:28.221 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 15:38:28.221 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 15:38:28.237 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 15:38:29.058 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 15:38:29.061 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 15:38:29.073 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 851.1222ms
+21-04-01 15:38:29.073 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 15:38:29.080 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 500 - text/plain;+charset=utf-8 861.5700ms
+21-04-01 15:38:31.571 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 15:38:31.571 +01:00 [INF] CORS policy execution successful.
+21-04-01 15:38:31.572 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 15:38:31.572 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 15:38:31.574 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 15:38:31.665 +01:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 15:38:31.670 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 15:38:31.672 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 99.5383ms
+21-04-01 15:38:31.672 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 15:38:31.673 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 101.7996ms
+21-04-01 16:17:12.569 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:17:12.579 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:12.588 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:17:12.600 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:12.738 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:15.310 +01:00 [INF] Executed DbCommand (138ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:17:15.321 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:17:15.326 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 2710.8597ms
+21-04-01 16:17:15.327 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:17:15.329 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 2763.4444ms
+21-04-01 16:17:17.968 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 16:17:17.970 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:17.979 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:17.980 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:17.983 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:18.399 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 16:17:18.413 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 16:17:18.427 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 447.2222ms
+21-04-01 16:17:18.427 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:18.453 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 500 - text/plain;+charset=utf-8 485.2928ms
+21-04-01 16:17:21.018 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 16:17:21.018 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:21.028 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:21.028 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:21.029 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:21.676 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 16:17:21.677 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 16:17:21.677 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 649.0178ms
+21-04-01 16:17:21.678 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:21.679 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 500 - text/plain;+charset=utf-8 661.1299ms
+21-04-01 16:17:22.880 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 16:17:22.880 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:22.886 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:22.886 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:22.888 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:23.346 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 16:17:23.346 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:17:23.347 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 16:17:23.347 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:23.347 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 461.0818ms
+21-04-01 16:17:23.347 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:23.347 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:17:23.348 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:23.350 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 500 - text/plain;+charset=utf-8 469.7396ms
+21-04-01 16:17:23.356 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:23.384 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:17:23.387 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:17:23.389 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 40.3206ms
+21-04-01 16:17:23.389 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:17:23.389 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 43.6260ms
+21-04-01 16:17:25.848 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:17:25.865 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:25.866 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:17:25.866 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:25.867 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:25.887 +01:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:17:25.888 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:17:25.890 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 24.5186ms
+21-04-01 16:17:25.891 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:17:25.891 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 43.1594ms
+21-04-01 16:17:27.248 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/3 - -
+21-04-01 16:17:27.266 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:17:27.267 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:27.267 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:17:27.268 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:17:28.202 +01:00 [ERR] Something went wrong in the GetCustomer
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Hours' specified in string based include path 'Hours'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at WebAPI.Repository.GenericRepository`1.Get(Expression`1 expression, List`1 includes) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Repository\GenericRepository.cs:line 53
+   at WebAPI.Controllers.CustomerController.GetCustomer(Int32 id) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Controllers\CustomerController.cs:line 67
+21-04-01 16:17:28.203 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+21-04-01 16:17:28.218 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 950.72ms
+21-04-01 16:17:28.218 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:17:28.219 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/3 - - - 500 - text/plain;+charset=utf-8 970.9331ms
+21-04-01 16:25:13.155 +01:00 [INF] Application Is Starting
+21-04-01 16:25:20.528 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 16:25:21.446 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 16:25:21.446 +01:00 [INF] Hosting environment: Development
+21-04-01 16:25:21.446 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 16:25:21.535 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 16:25:22.051 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 519.9292ms
+21-04-01 16:25:51.699 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 16:25:51.917 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 218.6102ms
+21-04-01 16:25:53.258 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 16:25:53.284 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 16:25:53.495 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 16:25:54.617 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 1121.3827ms
+21-04-01 16:25:54.645 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 1361.5391ms
+21-04-01 16:25:54.924 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1666.6617ms
+21-04-01 16:27:35.370 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:27:35.394 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:27:35.425 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:27:35.590 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:27:40.387 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:27:45.327 +01:00 [INF] Executed DbCommand (479ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:27:45.896 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:27:47.745 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 12085.8223ms
+21-04-01 16:27:47.748 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:27:47.863 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 12492.8422ms
+21-04-01 16:27:51.422 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/4 - -
+21-04-01 16:27:51.423 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:27:51.427 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:27:51.442 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:27:51.607 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:27:52.483 +01:00 [INF] Executed DbCommand (328ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:27:52.530 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:27:52.535 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 1093.3891ms
+21-04-01 16:27:52.536 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:27:52.536 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/4 - - - 200 170 application/json;+charset=utf-8 1117.2880ms
+21-04-01 16:28:00.958 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:28:00.958 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:00.959 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:00.959 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:01.002 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:01.135 +01:00 [INF] Executed DbCommand (130ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:28:01.136 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:28:01.148 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 189.3555ms
+21-04-01 16:28:01.149 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:01.149 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 190.9113ms
+21-04-01 16:28:02.599 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 16:28:02.609 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:02.609 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:02.609 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:02.610 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:03.128 +01:00 [INF] Executed DbCommand (511ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:28:03.129 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:28:03.144 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 535.0738ms
+21-04-01 16:28:03.145 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:03.145 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 200 184 application/json;+charset=utf-8 546.6306ms
+21-04-01 16:28:03.477 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:28:03.478 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:03.478 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:03.478 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:03.479 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:03.553 +01:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:28:03.554 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:28:03.559 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 81.0832ms
+21-04-01 16:28:03.560 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:03.561 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 83.1819ms
+21-04-01 16:28:05.155 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/4 - -
+21-04-01 16:28:05.156 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:05.156 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:05.156 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:05.157 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:05.193 +01:00 [INF] Executed DbCommand (35ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:28:05.193 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:28:05.355 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 198.9804ms
+21-04-01 16:28:05.356 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:05.362 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/4 - - - 200 170 application/json;+charset=utf-8 213.0243ms
+21-04-01 16:28:11.616 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:28:11.617 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:11.617 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:11.617 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:11.618 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:11.678 +01:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:28:11.679 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:28:11.682 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 64.5646ms
+21-04-01 16:28:11.682 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:11.723 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 66.4029ms
+21-04-01 16:28:12.569 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/4 - -
+21-04-01 16:28:12.571 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:12.575 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:12.576 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:12.578 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:13.095 +01:00 [INF] Executed DbCommand (514ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:28:13.096 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:28:13.098 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 522.0974ms
+21-04-01 16:28:13.099 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:13.099 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/4 - - - 200 170 application/json;+charset=utf-8 530.2059ms
+21-04-01 16:28:21.914 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:28:21.914 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:21.915 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:21.921 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:21.922 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:22.037 +01:00 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:28:22.038 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:28:22.039 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 117.7085ms
+21-04-01 16:28:22.039 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:22.039 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 125.4455ms
+21-04-01 16:28:34.338 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/4 - -
+21-04-01 16:28:34.339 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:34.339 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:34.339 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:34.399 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:34.504 +01:00 [INF] Executed DbCommand (104ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:28:34.505 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:28:34.507 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 109.897ms
+21-04-01 16:28:34.507 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:28:34.508 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/4 - - - 200 170 application/json;+charset=utf-8 169.2267ms
+21-04-01 16:28:41.241 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:28:41.242 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:28:41.242 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:41.242 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:28:41.247 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:28:41.304 +01:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:28:41.305 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:28:41.318 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 75.5142ms
+21-04-01 16:28:41.318 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:28:41.318 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 76.9082ms
+21-04-01 16:30:03.227 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/3 - -
+21-04-01 16:30:03.227 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:03.228 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:30:03.228 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:03.229 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:03.346 +01:00 [INF] Executed DbCommand (115ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:30:03.349 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:30:03.362 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 133.9501ms
+21-04-01 16:30:03.362 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:30:03.363 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/3 - - - 200 180 application/json;+charset=utf-8 135.5779ms
+21-04-01 16:30:09.822 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:30:09.822 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:09.822 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:09.822 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:09.839 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:09.910 +01:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:30:09.911 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:30:09.944 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 121.9689ms
+21-04-01 16:30:09.944 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:09.945 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 123.6267ms
+21-04-01 16:30:14.575 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 16:30:14.575 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:14.575 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:30:14.608 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:14.609 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:14.636 +01:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:30:14.638 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:30:14.644 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 35.9485ms
+21-04-01 16:30:14.644 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:30:14.690 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 200 184 application/json;+charset=utf-8 115.6984ms
+21-04-01 16:30:23.525 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:30:23.525 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:23.525 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:23.525 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:23.526 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:23.559 +01:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:30:23.564 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:30:23.565 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 39.5338ms
+21-04-01 16:30:23.565 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:23.566 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 41.1310ms
+21-04-01 16:30:25.120 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/3 - -
+21-04-01 16:30:25.120 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:25.121 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:30:25.121 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:25.124 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:26.109 +01:00 [INF] Executed DbCommand (984ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:30:26.109 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:30:26.344 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 1223.4246ms
+21-04-01 16:30:26.345 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:30:26.345 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/3 - - - 200 180 application/json;+charset=utf-8 1224.9146ms
+21-04-01 16:30:28.634 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:30:28.635 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:28.635 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:28.636 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:28.637 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:29.216 +01:00 [INF] Executed DbCommand (579ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:30:29.217 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:30:29.219 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 583.0315ms
+21-04-01 16:30:29.219 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:29.220 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 585.4933ms
+21-04-01 16:30:44.173 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=vall&orderBy=name - -
+21-04-01 16:30:44.173 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:44.173 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:44.173 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:44.174 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:44.797 +01:00 [INF] Executed DbCommand (572ms) [Parameters=[@__lowerCaseSearchTerm_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+WHERE (@__lowerCaseSearchTerm_0 LIKE N'') OR (CHARINDEX(@__lowerCaseSearchTerm_0, LOWER([c].[Name])) > 0)
+21-04-01 16:30:44.798 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:30:44.799 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 625.9673ms
+21-04-01 16:30:44.800 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:44.801 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=vall&orderBy=name - - - 200 172 application/json;+charset=utf-8 628.3243ms
+21-04-01 16:30:47.496 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:30:47.497 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:30:47.497 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:47.497 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:30:47.497 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:30:47.664 +01:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:30:47.665 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:30:47.666 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 168.6149ms
+21-04-01 16:30:47.666 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:30:47.666 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 169.8836ms
+21-04-01 16:39:51.586 +01:00 [INF] Application Is Starting
+21-04-01 16:40:10.021 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-01 16:40:14.671 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-01 16:40:14.671 +01:00 [INF] Hosting environment: Development
+21-04-01 16:40:14.671 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-01 16:40:16.817 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-01 16:40:18.877 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 2067.1033ms
+21-04-01 16:40:21.373 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-01 16:40:21.888 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-01 16:40:21.888 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-01 16:40:25.562 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 3673.6856ms
+21-04-01 16:40:25.578 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 3689.9406ms
+21-04-01 16:40:25.768 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4394.5191ms
+21-04-01 16:40:52.577 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-01 16:40:52.599 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:40:52.613 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:40:52.740 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:40:57.276 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:41:02.005 +01:00 [INF] Executed DbCommand (395ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-01 16:41:02.386 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-01 16:41:02.992 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 10221.8011ms
+21-04-01 16:41:02.994 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-01 16:41:03.004 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 538 application/json;+charset=utf-8 10427.0937ms
+21-04-01 16:41:05.975 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-01 16:41:05.975 +01:00 [INF] CORS policy execution successful.
+21-04-01 16:41:06.013 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:41:06.020 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-01 16:41:06.096 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-01 16:41:06.977 +01:00 [INF] Executed DbCommand (226ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-01 16:41:07.021 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-01 16:41:07.022 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 1001.8157ms
+21-04-01 16:41:07.022 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-01 16:41:07.023 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 200 184 application/json;+charset=utf-8 1048.4864ms

@@ -29,8 +29,10 @@ namespace WebAPI.Models
 
         public string InvoicedDate { get; set; }
 
-        public virtual IList<Hours> Hours { get; set; }
+        //public virtual IList<Hours> Hours { get; set; }
 
-        public virtual IList<Days> Days { get; set; }
+        //public virtual IList<Days> Days { get; set; }
+
+        public virtual IList<Audit> Audit { get; set; }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Models;
 
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210401112658_RemoveHours")]
+    partial class RemoveHours
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,22 +50,22 @@ namespace WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "10501f1b-cbec-4bda-aa52-8210702e5ea6",
-                            ConcurrencyStamp = "bdabc4bc-f94d-44ad-9710-679432970a35",
+                            Id = "1b7ec2f8-d2b4-4957-93a4-6c55c66e2d7c",
+                            ConcurrencyStamp = "751885e1-1ffe-425f-b948-b87ec67b0719",
                             Name = "Lookup",
                             NormalizedName = "LOOKUP"
                         },
                         new
                         {
-                            Id = "026916ef-3133-4e64-a843-6195f2739cdf",
-                            ConcurrencyStamp = "ed49e65e-0e74-429d-8671-fa5fec7e8685",
+                            Id = "cefa138c-94df-4bba-ab91-bc550e0d2081",
+                            ConcurrencyStamp = "a89e6b7b-1ef1-40ce-94bf-0561f6bc034e",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "5bcc3d65-1252-42c5-ba0e-b94849d83408",
-                            ConcurrencyStamp = "43c6d773-fb91-46d3-825a-219795be4f1f",
+                            Id = "4a12a7d9-3317-4b9b-8bd9-e378ac83fab7",
+                            ConcurrencyStamp = "94c5f75c-5cc5-4356-807e-3f3f3e925f6c",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -317,6 +319,29 @@ namespace WebAPI.Migrations
                     b.ToTable("Customer");
                 });
 
+            modelBuilder.Entity("WebAPI.Models.Days", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateComplete")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Days");
+                });
+
             modelBuilder.Entity("WebAPI.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -425,9 +450,22 @@ namespace WebAPI.Migrations
                     b.Navigation("TransType");
                 });
 
+            modelBuilder.Entity("WebAPI.Models.Days", b =>
+                {
+                    b.HasOne("WebAPI.Models.Customer", "Customer")
+                        .WithMany("Days")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("WebAPI.Models.Customer", b =>
                 {
                     b.Navigation("Audit");
+
+                    b.Navigation("Days");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Employee", b =>

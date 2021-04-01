@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +9,19 @@ using System.Threading.Tasks;
 using WebAPI.DTOs;
 using WebAPI.IRepository;
 using WebAPI.Models;
-using System.Text.Json;
 
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class AuditController : ControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ILogger<CustomerController> _logger;
+        private readonly ILogger<AuditController> _logger;
         private readonly IMapper _mapper;
 
-        public CustomerController(IUnitOfWork unitOfWork, ILogger<CustomerController> logger,
+        public AuditController(IUnitOfWork unitOfWork, ILogger<AuditController> logger,
             IMapper mapper)
         {
             _unitOfWork = unitOfWork;
@@ -37,40 +34,35 @@ namespace WebAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetCustomers([FromQuery] RequestParams requestParams)
+        public async Task<IActionResult> GetAudits()
         {
             try
             {
-                var customers = await _unitOfWork.Customer.GetCustomers(requestParams);
-                //new
-                string param = System.Text.Json.JsonSerializer.Serialize(requestParams);
-                Response.Headers.Add("X-Pagination", param);
-                Response.Headers.Add("Access-Control-Expose-Headers", "X-Pagination");
-
-                var results = _mapper.Map<IList<CustomerDTO>>(customers);
+                var Audit = await _unitOfWork.Audit.GetAll();
+                var results = _mapper.Map<IList<AuditDTO>>(Audit);
                 return Ok(results);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Something went wrong in the {nameof(GetCustomers)}");
+                _logger.LogError(ex, $"Something went wrong in the {nameof(GetAudits)}");
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
 
-        [HttpGet("{id:int}", Name = "GetCustomer")]
+        [HttpGet("{id:int}", Name = "GetAudit")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetCustomer(int id)
+        public async Task<IActionResult> GetAudit(int id)
         {
             try
-            {                                                                                   //{ "Hours", "Days" })
-                var customer = await _unitOfWork.Customer.Get(q => q.Id == id, new List<string> { "Audit"});
-                var result = _mapper.Map<CustomerDTO>(customer);
+            {
+                var audit = await _unitOfWork.Audit.Get(q => q.Id == id, new List<string> { "TransType", "Employee" });
+                var result = _mapper.Map<AuditDTO>(audit);
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Something went wrong in the {nameof(GetCustomer)}");
+                _logger.LogError(ex, $"Something went wrong in the {nameof(GetAudit)}");
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
@@ -81,27 +73,27 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
-        public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerDTO customerDTO)
+        public async Task<IActionResult> CreateAudit([FromBody] CreateAuditDTO AuditDTO)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _logger.LogError($"Invalid POST attempt in {nameof(CreateCustomer)}");
+                _logger.LogError($"Invalid POST attempt in {nameof(CreateAudit)}");
                 return BadRequest(ModelState);
             }
 
             try
             {
-                var customer = _mapper.Map<Customer>(customerDTO);
-                await _unitOfWork.Customer.Insert(customer);
+                var audit = _mapper.Map<Audit>(AuditDTO);
+                await _unitOfWork.Audit.Insert(audit);
                 await _unitOfWork.Save();
 
                 //Created at route returns object to slient
-                return CreatedAtRoute("GetCustomer", new { id = customer.Id }, customer);
+                return CreatedAtRoute("GetAudit", new { id = audit.Id }, audit);
             }
             catch (Exception ex)
             {
 
-                _logger.LogError(ex, $"Something went wrong in the {nameof(CreateCustomer)}");
+                _logger.LogError(ex, $"Something went wrong in the {nameof(CreateAudit)}");
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
 
@@ -110,33 +102,33 @@ namespace WebAPI.Controllers
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] UpdateCustomerDTO customerDTO)
+        public async Task<IActionResult> UpdateAudit(int id, [FromBody] UpdateAuditDTO AuditDTO)
         {
-            if(!ModelState.IsValid || id < 1)
+            if (!ModelState.IsValid || id < 1)
             {
-                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateCustomer)}");
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateAudit)}");
                 return BadRequest(ModelState);
             }
 
             try
             {
-                var customer = await _unitOfWork.Customer.Get(q => q.Id == id);
-                if (customer == null)
+                var Audit = await _unitOfWork.Audit.Get(q => q.Id == id);
+                if (Audit == null)
                 {
-                    _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateCustomer)}");
-                    return BadRequest("Data submitted is invalid");
+                    _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateAudit)}");
+                    return BadRequest("IData submitted is invalid");
                 }
 
-                _mapper.Map(customerDTO, customer);
-                _unitOfWork.Customer.Update(customer);
+                _mapper.Map(AuditDTO, Audit);
+                _unitOfWork.Audit.Update(Audit);
                 await _unitOfWork.Save();
 
                 return NoContent();
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
-                _logger.LogError(ex, $"Something went wrong in the {nameof(UpdateCustomer)}");
+                _logger.LogError(ex, $"Something went wrong in the {nameof(UpdateAudit)}");
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
@@ -145,24 +137,24 @@ namespace WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteCustomer(int id)
+        public async Task<IActionResult> DeleteAudit(int id)
         {
             if (id < 1)
             {
-                _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteCustomer)}");
+                _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteAudit)}");
                 return BadRequest();
             }
 
             try
             {
-                var customer = await _unitOfWork.Customer.Get(q => q.Id == id);
-                if (customer == null)
+                var Audit = await _unitOfWork.Audit.Get(q => q.Id == id);
+                if (Audit == null)
                 {
-                    _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteCustomer)}");
+                    _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteAudit)}");
                     return BadRequest("Data submitted is invalid");
                 }
 
-                await _unitOfWork.Customer.Delete(id);
+                await _unitOfWork.Audit.Delete(id);
                 await _unitOfWork.Save();
 
                 return NoContent();
@@ -170,10 +162,9 @@ namespace WebAPI.Controllers
             catch (Exception ex)
             {
 
-                _logger.LogError(ex, $"Something went wrong in the {nameof(DeleteCustomer)}");
+                _logger.LogError(ex, $"Something went wrong in the {nameof(DeleteAudit)}");
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
-
     }
 }

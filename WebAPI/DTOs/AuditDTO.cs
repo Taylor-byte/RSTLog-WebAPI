@@ -1,32 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.Models
+namespace WebAPI.DTOs
 {
-    public class Audit
+    public class CreateAuditDTO
     {
 
-        [Key]
-        public int Id { get; set; }
+        
 
-        [ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
 
-        public Customer Customer { get; set; }
-
-        [ForeignKey(nameof(Employee))]
         public int EmployeeId { get; set; }
 
-        public Employee Employee { get; set; }
-
-        [ForeignKey(nameof(TransType))]
         public int TransTypeId { get; set; }
-
-        public TransType TransType { get; set; }
 
         //[ForeignKey(nameof(ApiUser))]
         //public int ApiUserId { get; set; }
@@ -39,11 +27,21 @@ namespace WebAPI.Models
 
         public int Qty { get; set; }
 
+    }
 
+    public class UpdateAuditDTO : CreateAuditDTO
+    {
 
+    }
 
+    public class AuditDTO : CreateAuditDTO
+    {
+        public int Id { get; set; }
 
+        //public IList<HoursDTO> Hours { get; set; }
 
+        public IList<CustomerDTO> Customer { get; set; }
 
+        public IList<EmployeeDTO> Employee { get; set; }
     }
 }

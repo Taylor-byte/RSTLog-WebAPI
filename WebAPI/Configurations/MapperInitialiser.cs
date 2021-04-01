@@ -24,6 +24,12 @@ namespace WebAPI.Configurations
             CreateMap<Employee, EmployeeDTO>().ReverseMap();
             CreateMap<Employee, CreateEmployeeDTO>().ReverseMap();
 
+            CreateMap<TransType, TransTypeDTO>().ReverseMap();
+            CreateMap<TransType, CreateTransTypeDTO>().ReverseMap();
+
+            CreateMap<Audit, AuditDTO>().ReverseMap();
+            CreateMap<Audit, CreateAuditDTO>().ReverseMap();
+
             CreateMap<ApiUser, UserDTO>().ReverseMap();
 
 

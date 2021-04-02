@@ -39,6 +39,8 @@ namespace WebAPI.Models
 
         public int Qty { get; set; }
 
+        public string Comments { get; set; }
+
 
 
 

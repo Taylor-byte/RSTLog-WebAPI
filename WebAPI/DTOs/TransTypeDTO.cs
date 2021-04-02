@@ -11,7 +11,7 @@ namespace WebAPI.DTOs
 
 
         [Required]
-        public string Name { get; set; }
+        public string Trans_Type { get; set; }
     }
 
     public class UpdateTransTypeDTO : CreateTransTypeDTO

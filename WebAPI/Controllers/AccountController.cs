@@ -36,43 +36,51 @@ namespace WebAPI.Controllers
             _authManager = authManager;
         }
 
+
+
         [HttpPost]
         [Route("register")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
+        public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDTO userForRegistrationDTO)
         {
-            _logger.LogInformation($"Registration attempt for {userDTO.Email}");
-            if (!ModelState.IsValid)
+            _logger.LogInformation($"Registration attempt for {userForRegistrationDTO.Email}");
+            if (userForRegistrationDTO == null || !ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            try
-            {
-                var user = _mapper.Map<ApiUser>(userDTO);
-                user.UserName = userDTO.Email;
-                var result = await _userManager.CreateAsync(user, userDTO.Password);
 
-                if(!result.Succeeded)
+            var user = new ApiUser
+            {
+                UserName = userForRegistrationDTO.Email,
+                Email = userForRegistrationDTO.Email
+            };
+                
+                var result = await _userManager.CreateAsync(user, userForRegistrationDTO.Password);
+
+                if (!result.Succeeded)
                 {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(error.Code, error.Description);
-                    }
-                    return BadRequest(ModelState);
+                    //foreach (var error in result.Errors)
+                    //{
+                    //    ModelState.AddModelError(error.Code, error.Description);
+                    //}
+                    //return BadRequest(ModelState);
+
+                    var errors = result.Errors.Select(e => e.Description);
+                    return BadRequest(new ResponseDTO { Errors = errors });
                 }
 
-                await _userManager.AddToRolesAsync(user, userDTO.Roles);
-                return Accepted();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Something went wrong in the {nameof(Register)}");
-                return Problem($"Something went wrong in the {nameof(Register)}", statusCode: 500);
-            }
+                //await _userManager.AddToRolesAsync(user, userDTO.Roles);
+                return StatusCode(201);
+           
+                //_logger.LogError(ex, $"Something went wrong in the {nameof(RegisterUser)}");
+                //return Problem($"Something went wrong in the {nameof(RegisterUser)}", statusCode: 500);
+            
 
         }
+
+
 
         [HttpPost]
         [Route("Login")]
@@ -101,4 +109,42 @@ namespace WebAPI.Controllers
         }
 
     }
+
+    //[HttpPost]
+    //[Route("register")]
+    //[ProducesResponseType(StatusCodes.Status202Accepted)]
+    //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+    //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    //public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
+    //{
+    //    _logger.LogInformation($"Registration attempt for {userDTO.Email}");
+    //    if (!ModelState.IsValid)
+    //    {
+    //        return BadRequest(ModelState);
+    //    }
+    //    try
+    //    {
+    //        var user = _mapper.Map<ApiUser>(userDTO);
+    //        user.UserName = userDTO.Email;
+    //        var result = await _userManager.CreateAsync(user, userDTO.Password);
+
+    //        if(!result.Succeeded)
+    //        {
+    //            foreach (var error in result.Errors)
+    //            {
+    //                ModelState.AddModelError(error.Code, error.Description);
+    //            }
+    //            return BadRequest(ModelState);
+    //        }
+
+    //        await _userManager.AddToRolesAsync(user, userDTO.Roles);
+    //        return Accepted();
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        _logger.LogError(ex, $"Something went wrong in the {nameof(Register)}");
+    //        return Problem($"Something went wrong in the {nameof(Register)}", statusCode: 500);
+    //    }
+
+    //}
 }

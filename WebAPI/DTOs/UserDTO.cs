@@ -14,7 +14,7 @@ namespace WebAPI.DTOs
         public string Email { get; set; }
 
         [Required]
-        [StringLength(14, ErrorMessage = "Your Password is limited to {2} to {1}  characters", MinimumLength = 14)]
+        //[StringLength(14, ErrorMessage = "Your Password is limited to {2} to {1}  characters", MinimumLength = 6)]
         public string Password { get; set; }
     }
     public class UserDTO : LoginUserDTO

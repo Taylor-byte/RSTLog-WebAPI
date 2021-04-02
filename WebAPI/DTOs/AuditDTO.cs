@@ -27,6 +27,8 @@ namespace WebAPI.DTOs
 
         public int Qty { get; set; }
 
+        public string Comments { get; set; }
+
     }
 
     public class UpdateAuditDTO : CreateAuditDTO

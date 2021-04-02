@@ -88,7 +88,8 @@ namespace WebAPI.Controllers
                 await _unitOfWork.Save();
 
                 //Created at route returns object to slient
-                return CreatedAtRoute("GetTransType", new { id = transType.Id }, transType);
+                //return CreatedAtRoute("GetTransType", new { id = transType.Id }, transType);
+                return Ok();
             }
             catch (Exception ex)
             {

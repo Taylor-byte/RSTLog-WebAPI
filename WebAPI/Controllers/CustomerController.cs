@@ -17,6 +17,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CustomerController : ControllerBase
     {
 
@@ -64,7 +65,7 @@ namespace WebAPI.Controllers
         {
             try
             {                                                                                   //{ "Hours", "Days" })
-                var customer = await _unitOfWork.Customer.Get(q => q.Id == id, new List<string> { "Audit"});
+                var customer = await _unitOfWork.Customer.Get(q => q.Id == id, new List<string> {"Audit"});
                 var result = _mapper.Map<CustomerDTO>(customer);
                 return Ok(result);
             }

@@ -20,6 +20,11 @@ namespace WebAPI.IRepository
 
         Task<PagedList<Customer>> GetCustomers(RequestParams requestParams);
 
+        Task<PagedList<Audit>> GetAudits(RequestParams requestParams);
+
+        //Task<IEnumerable<TransType>> GetTransTypes();
+        //Task<TransType> GetTransType(int departmentId);
+
         //Task<IPagedList> GetPagedList(
         //    RequestParams requestParams,
         //    List<string> includes = null

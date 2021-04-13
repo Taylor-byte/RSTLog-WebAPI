@@ -23,17 +23,20 @@ namespace WebAPI.Controllers
         private readonly ILogger<AccountController> _logger;
         private readonly IMapper _mapper;
         private readonly IAuthManager _authManager;
+        private readonly IAuthenticationService _authenticationService;
 
         public AccountController(UserManager<ApiUser> userManager,
             ILogger<AccountController> logger,
             IMapper mapper,
-            IAuthManager authManager)
+            IAuthManager authManager,
+            IAuthenticationService authenticationService)
         {
             _userManager = userManager;
            // _signInManager = signInManager;
             _logger = logger;
             _mapper = mapper;
             _authManager = authManager;
+            _authenticationService = authenticationService;
         }
 
 
@@ -84,31 +87,53 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginUserDTO userDTO)
+        public async Task<IActionResult> Login([FromBody] UserForAuthenticationDTO userForAuthenticationDTO)
         {
-            _logger.LogInformation($"Login attempt for {userDTO.Email}");
-            if (!ModelState.IsValid)
+            _logger.LogInformation($"Login attempt for {userForAuthenticationDTO.Email}");
+
+            var user = await _userManager.FindByNameAsync(userForAuthenticationDTO.Email);
+
+            if (user == null || !await _userManager.CheckPasswordAsync(user,
+                userForAuthenticationDTO.Password))
             {
-                return BadRequest(ModelState);
-            }
-            try
-            {
-                if (!await _authManager.ValidateUser(userDTO))
+                return Unauthorized(new AuthResponseDTO
                 {
-                    return Unauthorized();
-                }
-
-                return Accepted(new { Token = await _authManager.CreateToken() });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Something went wrong in the {nameof(Login)}");
-                return Problem($"Something went wrong in the {nameof(Login)}", statusCode: 500);
+                    ErrorMessage = "Invalid Authentication"
+                });
             }
 
+            var token = _authenticationService.GetToken(user);
+
+            return Ok(new AuthResponseDTO { IsAuthSuccessful = true, Token = token });
         }
 
     }
+
+    //[HttpPost]
+    //[Route("Login")]
+    //public async Task<IActionResult> Login([FromBody] LoginUserDTO userDTO)
+    //{
+    //    _logger.LogInformation($"Login attempt for {userDTO.Email}");
+    //    if (!ModelState.IsValid)
+    //    {
+    //        return BadRequest(ModelState);
+    //    }
+    //    try
+    //    {
+    //        if (!await _authManager.ValidateUser(userDTO))
+    //        {
+    //            return Unauthorized();
+    //        }
+
+    //        return Accepted(new { Token = await _authManager.CreateToken() });
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        _logger.LogError(ex, $"Something went wrong in the {nameof(Login)}");
+    //        return Problem($"Something went wrong in the {nameof(Login)}", statusCode: 500);
+    //    }
+
+    //}
 
     //[HttpPost]
     //[Route("register")]

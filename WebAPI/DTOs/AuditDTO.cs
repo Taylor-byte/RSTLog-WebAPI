@@ -33,7 +33,9 @@ namespace WebAPI.DTOs
 
     public class UpdateAuditDTO : CreateAuditDTO
     {
+        //public IList<CreateEmployeeDTO> Employee { get; set; }
 
+        //public IList<CreateTransTypeDTO> TransType { get; set; }
     }
 
     public class AuditDTO : CreateAuditDTO
@@ -42,8 +44,10 @@ namespace WebAPI.DTOs
 
         //public IList<HoursDTO> Hours { get; set; }
 
-        public IList<CustomerDTO> Customer { get; set; }
+        //public IList<CustomerDTO> Customer { get; set; }
 
-        public IList<EmployeeDTO> Employee { get; set; }
+        //public IList<EmployeeDTO> Employee { get; set; }
+
+        //public IList<TransTypeDTO> TransType { get; set; }
     }
 }

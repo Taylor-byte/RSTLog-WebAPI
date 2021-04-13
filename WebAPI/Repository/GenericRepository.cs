@@ -79,6 +79,17 @@ namespace WebAPI.Repository
             return await query.AsNoTracking().ToListAsync();
         }
 
+        public async Task<PagedList<Audit>> GetAudits(RequestParams requestParams)
+        {
+
+            var audits = await _context.Audit
+               //.Search(requestParams.SearchTerm)
+               .ToListAsync();
+
+            return PagedList<Audit>
+                .ToPagedList(audits, requestParams.PageNumber, requestParams.PageSize);
+        }
+
         public async Task<PagedList<Customer>> GetCustomers(RequestParams requestParams)
         {
             var customers = await _context.Customer

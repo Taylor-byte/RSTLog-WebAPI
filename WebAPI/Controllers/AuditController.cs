@@ -34,12 +34,17 @@ namespace WebAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAudits()
+        public async Task<IActionResult> GetAudits([FromQuery] RequestParams requestParams)
         {
             try
             {
-                var Audit = await _unitOfWork.Audit.GetAll();
-                var results = _mapper.Map<IList<AuditDTO>>(Audit);
+                var audits = await _unitOfWork.Audit.GetAudits(requestParams);
+                //new
+                string param = System.Text.Json.JsonSerializer.Serialize(requestParams);
+                Response.Headers.Add("X-Pagination", param);
+                Response.Headers.Add("Access-Control-Expose-Headers", "X-Pagination");
+
+                var results = _mapper.Map<IList<AuditDTO>>(audits);
                 return Ok(results);
             }
             catch (Exception ex)
@@ -48,6 +53,24 @@ namespace WebAPI.Controllers
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
+
+        //[HttpGet]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //public async Task<IActionResult> GetAudits()
+        //{
+        //    try
+        //    {
+        //        var Audit = await _unitOfWork.Audit.GetAll();
+        //        var results = _mapper.Map<IList<AuditDTO>>(Audit);
+        //        return Ok(results);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, $"Something went wrong in the {nameof(GetAudits)}");
+        //        return StatusCode(500, "Internal Server Error. Please try again later.");
+        //    }
+        //}
 
         [HttpGet("{id:int}", Name = "GetAudit")]
         [ProducesResponseType(StatusCodes.Status200OK)]

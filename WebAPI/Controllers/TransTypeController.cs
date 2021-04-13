@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             try
             {
                 var TransTypes = await _unitOfWork.TransType.GetAll();
-                var results = _mapper.Map<IList<TransTypeDTO>>(TransTypes);
+                var results = _mapper.Map<IEnumerable<TransTypeDTO>>(TransTypes);
                 return Ok(results);
             }
             catch (Exception ex)

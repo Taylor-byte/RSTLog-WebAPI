@@ -22,6 +22,16 @@ namespace WebAPI.Repository.RepositoryExtensions
             return customers.Where(c => c.Name.ToLower().Contains(lowerCaseSearchTerm));
         }
 
+        //public static IQueryable<Audit> Search(this IQueryable<Audit> audits, string searchTerm)
+        //{
+        //    if (string.IsNullOrWhiteSpace(searchTerm))
+        //        return audits;
+
+        //    var lowerCaseSearchTerm = searchTerm.Trim().ToLower();
+
+        //    return audits.Where(c => c..ToLower().Contains(lowerCaseSearchTerm));
+        //}
+
         public static IQueryable<Customer> Sort(this IQueryable<Customer> customers,
             string orderByQueryString)
         {

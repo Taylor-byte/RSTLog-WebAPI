@@ -19,6 +19,9 @@ using WebAPI.IRepository;
 using WebAPI.Repository;
 using Microsoft.AspNetCore.Identity;
 using WebAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace WebAPI
 {
@@ -39,9 +42,30 @@ namespace WebAPI
                 options.UseSqlServer(Configuration.GetConnectionString("sqlconnection"))
             );
 
-            services.AddAuthentication();
+            
             services.ConfigureIdentity();
-            services.ConfigureJWT(Configuration);
+            //services.ConfigureJWT(Configuration);
+            var jwtSettings = Configuration.GetSection("JWTSettings");
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    ValidIssuer = jwtSettings["validIssuer"],
+                    ValidAudience = jwtSettings["validAudience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["securityKey"]))
+                };
+            });
+
+            services.Configure<JwtConfiguration>(Configuration.GetSection("JWTSettings"));
 
             services.AddCors(o => {
                 o.AddPolicy("Cors Policy", builder =>
@@ -57,6 +81,8 @@ namespace WebAPI
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAuthManager, AuthManager>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
+
 
             services.AddSwaggerGen(c =>
             {

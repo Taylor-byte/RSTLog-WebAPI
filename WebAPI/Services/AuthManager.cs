@@ -19,6 +19,7 @@ namespace WebAPI.Services
 
         private readonly UserManager<ApiUser> _userManager;
         private readonly IConfiguration _configuration;
+        //private ApiUser _user;
         private ApiUser _user;
 
         public AuthManager(UserManager<ApiUser> userManager, IConfiguration configuration)

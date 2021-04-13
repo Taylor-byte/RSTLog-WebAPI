@@ -9,6 +9,6 @@ namespace WebAPI.Services
 {
     public interface IAuthenticationService
     {
-       string GetToken(ApiUser user);
+       Task<string> GetToken(ApiUser user);
     }
 }

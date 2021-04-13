@@ -17,17 +17,20 @@ namespace WebAPI.Services
     {
         private readonly JwtConfiguration _jwtSettings;
         private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler;
+        private readonly UserManager<ApiUser> _userManager;
 
-        public AuthenticationService(IOptions<JwtConfiguration> jwtSettings)
+        public AuthenticationService(IOptions<JwtConfiguration> jwtSettings,
+            UserManager<ApiUser> userManager)
         {
             _jwtSettings = jwtSettings.Value;
             _jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            _userManager = userManager;
         }
 
-        public string GetToken(ApiUser user)
+        public async Task<string> GetToken(ApiUser user)
         {
             var signingCredentials = GetSigningCredentials();
-            var claims = GetClaims(user);
+            var claims = await GetClaims(user);
             var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
 
             return _jwtSecurityTokenHandler.WriteToken(tokenOptions);
@@ -41,12 +44,18 @@ namespace WebAPI.Services
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
 
-        private IEnumerable<Claim> GetClaims(ApiUser user)
+        private async Task<IEnumerable<Claim>> GetClaims(ApiUser user)
         {
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Email)
             };
+
+            var roles = await _userManager.GetRolesAsync(user);
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             return claims;
         }

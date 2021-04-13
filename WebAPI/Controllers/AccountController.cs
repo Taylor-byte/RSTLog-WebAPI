@@ -74,7 +74,8 @@ namespace WebAPI.Controllers
                     return BadRequest(new ResponseDTO { Errors = errors });
                 }
 
-                //await _userManager.AddToRolesAsync(user, userDTO.Roles);
+                await _userManager.AddToRoleAsync(user, "User");
+
                 return StatusCode(201);
            
                 //_logger.LogError(ex, $"Something went wrong in the {nameof(RegisterUser)}");
@@ -102,7 +103,7 @@ namespace WebAPI.Controllers
                 });
             }
 
-            var token = _authenticationService.GetToken(user);
+            var token = await _authenticationService.GetToken(user);
 
             return Ok(new AuthResponseDTO { IsAuthSuccessful = true, Token = token });
         }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Models;
 
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210413184240_RefreshTokenUserFileds")]
+    partial class RefreshTokenUserFileds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,22 +50,22 @@ namespace WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a99af442-2dcf-4b6a-a105-ff81e498766b",
-                            ConcurrencyStamp = "adb89fbf-0983-427c-84bd-650f4e649fb1",
+                            Id = "35ec2199-6650-4180-a3dc-92c20f35017d",
+                            ConcurrencyStamp = "5f316adc-6f4a-48eb-9c01-9dda55016455",
                             Name = "Lookup",
                             NormalizedName = "LOOKUP"
                         },
                         new
                         {
-                            Id = "e29a6c50-9fec-4016-a3af-a2adb86bce0d",
-                            ConcurrencyStamp = "93454c50-7cb2-4a32-81aa-a6ade6955059",
+                            Id = "1fb4a6cb-3469-42f8-8dc1-9cd57bc0a25a",
+                            ConcurrencyStamp = "53d6c95a-7d5b-4fe7-82c8-ff01099d35bd",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "43d58e6b-e777-4e65-b470-10bfba74864b",
-                            ConcurrencyStamp = "036c8f49-0908-41f1-8504-56d48666ceb4",
+                            Id = "7629e832-3a1a-4a4e-95d3-3f59d28aea6b",
+                            ConcurrencyStamp = "3635d873-fa60-4d1e-99d5-8edf472dfc7a",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -224,8 +226,8 @@ namespace WebAPI.Migrations
                     b.Property<string>("RefreshToken")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("RefreshTokenExpiryTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("RefreshTokenExpiryTime")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

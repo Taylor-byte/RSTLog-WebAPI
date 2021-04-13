@@ -105,7 +105,15 @@ namespace WebAPI.Controllers
 
             var token = await _authenticationService.GetToken(user);
 
-            return Ok(new AuthResponseDTO { IsAuthSuccessful = true, Token = token });
+            user.RefreshToken = _authenticationService.GenerateRefreshToken();
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+            await _userManager.UpdateAsync(user);
+
+            return Ok(new AuthResponseDTO {
+                IsAuthSuccessful = true,
+                Token = token,
+                RefreshToken = user.RefreshToken
+            });
         }
 
     }

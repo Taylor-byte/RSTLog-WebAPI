@@ -1,0 +1,269 @@
+21-04-14 13:00:56.422 +01:00 [INF] Application Is Starting
+21-04-14 13:00:59.065 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 77
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 13:01:38.124 +01:00 [INF] Application Is Starting
+21-04-14 13:01:40.564 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 76
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 13:02:12.404 +01:00 [INF] Application Is Starting
+21-04-14 13:02:13.956 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 76
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 13:11:49.870 +01:00 [INF] Application Is Starting
+21-04-14 13:11:51.744 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 73
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 13:21:19.219 +01:00 [INF] Application Is Starting
+21-04-14 13:21:21.836 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-14 13:21:22.870 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-14 13:21:22.870 +01:00 [INF] Hosting environment: Development
+21-04-14 13:21:22.871 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-14 13:21:23.023 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 13:21:23.372 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 353.8716ms
+21-04-14 13:21:24.096 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-14 13:21:24.310 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-14 13:21:24.351 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-14 13:21:24.626 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - WebAPI.Controllers.TokenController.Refresh (WebAPI). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+21-04-14 13:21:25.014 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 500 - text/plain 918.0407ms
+21-04-14 13:21:25.051 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 700.8187ms
+21-04-14 13:21:25.061 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 751.1403ms
+21-04-14 13:51:38.606 +01:00 [INF] Application Is Starting
+21-04-14 13:51:41.719 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 73
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 14:03:52.176 +01:00 [INF] Application Is Starting
+21-04-14 14:03:54.700 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 73
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 14:05:47.150 +01:00 [INF] Application Is Starting
+21-04-14 14:05:50.933 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-14 14:05:51.844 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-14 14:05:51.844 +01:00 [INF] Hosting environment: Development
+21-04-14 14:05:51.844 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-14 14:05:51.982 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 14:05:52.275 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 295.9024ms
+21-04-14 14:05:52.730 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-14 14:05:52.958 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-14 14:05:52.962 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-14 14:05:53.199 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - WebAPI.Controllers.TokenController.Refresh (WebAPI). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+21-04-14 14:05:53.679 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 500 - text/plain 948.7435ms
+21-04-14 14:05:53.701 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 739.3419ms
+21-04-14 14:05:53.709 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 750.7792ms
+21-04-14 14:06:36.978 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/swagger.jason - -
+21-04-14 14:06:37.003 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/swagger.jason - - - 404 - - 25.9906ms
+21-04-14 14:06:44.293 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/swagger.json - -
+21-04-14 14:06:44.406 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/swagger.json - - - 404 - - 90.3428ms
+21-04-14 14:06:47.037 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/swagger.jason - -
+21-04-14 14:06:47.065 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/swagger.jason - - - 404 - - 27.4789ms
+21-04-14 14:06:47.749 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 14:06:47.754 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 5.4628ms
+21-04-14 14:06:48.720 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-14 14:06:48.732 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-14 14:06:48.800 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 80.2011ms
+21-04-14 14:06:48.815 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 82.8382ms
+21-04-14 14:11:38.843 +01:00 [INF] Application Is Starting
+21-04-14 14:11:46.302 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-14 14:11:47.164 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-14 14:11:47.165 +01:00 [INF] Hosting environment: Development
+21-04-14 14:11:47.165 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-14 14:11:47.335 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 14:11:47.335 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 14:11:47.773 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 440.9434ms
+21-04-14 14:11:47.813 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 482.8046ms
+21-04-14 14:11:48.440 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-14 14:11:49.118 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 678.2965ms
+21-04-14 14:11:50.272 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-14 14:11:50.292 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-14 14:11:50.667 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 394.5085ms
+21-04-14 14:11:50.670 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 377.3914ms
+21-04-14 14:49:02.921 +01:00 [INF] Application Is Starting
+21-04-14 14:49:06.494 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 99
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 14:49:39.026 +01:00 [INF] Application Is Starting
+21-04-14 14:49:42.537 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-14 14:49:43.367 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-14 14:49:43.367 +01:00 [INF] Hosting environment: Development
+21-04-14 14:49:43.367 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-14 14:49:43.463 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 14:49:43.765 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 307.6835ms
+21-04-14 14:49:44.319 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-14 14:49:44.520 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-14 14:49:44.520 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-14 14:49:45.024 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 705.6579ms
+21-04-14 14:49:45.037 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 517.3756ms
+21-04-14 14:49:45.045 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 525.2150ms
+21-04-14 14:52:51.323 +01:00 [INF] Application Is Starting
+21-04-14 14:52:54.787 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 91
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 14:55:19.807 +01:00 [INF] Application Is Starting
+21-04-14 14:55:22.238 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 74
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 14:56:02.139 +01:00 [INF] Application Is Starting
+21-04-14 14:56:05.100 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 74
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 15:06:22.980 +01:00 [INF] Application Is Starting
+21-04-14 15:06:30.754 +01:00 [FTL] Application Failed to start
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationInstance')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton[TService](IServiceCollection services, TService implementationInstance)
+   at WebAPI.Startup.ConfigureServices(IServiceCollection services) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Startup.cs:line 91
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at WebAPI.Program.Main(String[] args) in C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI\Program.cs:line 29
+21-04-14 15:14:58.829 +01:00 [INF] Application Is Starting
+21-04-14 15:15:08.188 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-14 15:15:09.917 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-14 15:15:09.918 +01:00 [INF] Hosting environment: Development
+21-04-14 15:15:09.918 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-14 15:15:10.253 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-14 15:15:11.087 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 837.7307ms
+21-04-14 15:15:12.220 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-14 15:15:12.434 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - -
+21-04-14 15:15:12.434 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - -
+21-04-14 15:15:14.355 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-bundle.js.map - - - 404 - - 1920.8394ms
+21-04-14 15:15:14.371 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:44323/swagger/swagger-ui-standalone-preset.js.map - - - 404 - - 1936.6014ms
+21-04-14 15:15:14.504 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 2284.0888ms

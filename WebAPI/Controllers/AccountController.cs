@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using WebAPI.Models;
 using WebAPI.DTOs;
 using WebAPI.Services;
+using EmailService;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace WebAPI.Controllers
 {
@@ -24,12 +26,14 @@ namespace WebAPI.Controllers
         private readonly IMapper _mapper;
         private readonly IAuthManager _authManager;
         private readonly IAuthenticationService _authenticationService;
+        private readonly IEmailSender _emailSender;
 
         public AccountController(UserManager<ApiUser> userManager,
             ILogger<AccountController> logger,
             IMapper mapper,
             IAuthManager authManager,
-            IAuthenticationService authenticationService)
+            IAuthenticationService authenticationService,
+            IEmailSender emailSender)
         {
             _userManager = userManager;
            // _signInManager = signInManager;
@@ -37,6 +41,7 @@ namespace WebAPI.Controllers
             _mapper = mapper;
             _authManager = authManager;
             _authenticationService = authenticationService;
+            _emailSender = emailSender;
         }
 
 
@@ -116,7 +121,37 @@ namespace WebAPI.Controllers
             });
         }
 
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(
+        [FromBody] ForgotPasswordDTO forgotPasswordDTO)
+        {
+            //Return bad request not "email not found". Could be used to work out which emails exists in the database.
+            var user = await _userManager.FindByEmailAsync(forgotPasswordDTO.Email);
+            if (user == null)
+                return BadRequest("Invalid Request");
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var param = new Dictionary<string, string>
+            {
+                { "token", token },
+                { "email", forgotPasswordDTO.Email }
+            };
+
+            var callback = QueryHelpers.AddQueryString(forgotPasswordDTO.ClientURI, param);
+
+            var message = new Message(new string[] { user.Email }, "Reset password token",
+                callback, null);
+
+            await _emailSender.SendEmailAsync(message);
+
+            return Ok();
+        }
+
     }
+
+   
 
     //[HttpPost]
     //[Route("Login")]

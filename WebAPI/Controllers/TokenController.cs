@@ -26,6 +26,7 @@ namespace WebAPI.Controllers
             _authenticationService = authenticationService;
         }
 
+        [HttpPost("refresh")]
         public async Task<IActionResult> Refresh(
             [FromBody] RefreshTokenDTO tokenDTO)
         {

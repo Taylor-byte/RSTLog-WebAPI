@@ -22,6 +22,7 @@ using WebAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using EmailService;
 
 namespace WebAPI
 {
@@ -42,9 +43,11 @@ namespace WebAPI
                 options.UseSqlServer(Configuration.GetConnectionString("sqlconnection"))
             );
 
-            
+            //services.AddIdentity<ApiUser, IdentityRole>().AddDefaultTokenProviders;
             services.ConfigureIdentity();
             //services.ConfigureJWT(Configuration);
+            services.Configure<DataProtectionTokenProviderOptions>(opt =>
+                opt.TokenLifespan = TimeSpan.FromHours(2));
             var jwtSettings = Configuration.GetSection("JWTSettings");
             services.AddAuthentication(opt =>
             {
@@ -67,6 +70,9 @@ namespace WebAPI
 
             services.Configure<JwtConfiguration>(Configuration.GetSection("JWTSettings"));
 
+            
+
+
             services.AddCors(o => {
                 o.AddPolicy("Cors Policy", builder =>
                 builder.AllowAnyOrigin()
@@ -82,7 +88,9 @@ namespace WebAPI
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAuthManager, AuthManager>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
-
+            var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddSwaggerGen(c =>
             {

@@ -48,6 +48,7 @@ namespace WebAPI
             //services.ConfigureJWT(Configuration);
             services.Configure<DataProtectionTokenProviderOptions>(opt =>
                 opt.TokenLifespan = TimeSpan.FromHours(2));
+
             var jwtSettings = Configuration.GetSection("JWTSettings");
             services.AddAuthentication(opt =>
             {

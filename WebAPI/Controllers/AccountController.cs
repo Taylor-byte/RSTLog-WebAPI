@@ -149,6 +149,36 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(
+            [FromBody] ResetPasswordDTO resetPasswordDTO)
+        {
+            var errorResponse = new ResetPasswordResponseDTO
+            {
+                Errors = new string[] { "Reset Password Failed" }
+            };
+
+            if (!ModelState.IsValid)
+                return BadRequest(errorResponse);
+
+            var user = await _userManager.FindByEmailAsync(resetPasswordDTO.Email);
+            if (user == null)
+                return BadRequest(errorResponse);
+
+            var resetPassResult = await _userManager.ResetPasswordAsync(user,
+                resetPasswordDTO.Token, resetPasswordDTO.Password);
+
+            if (!resetPassResult.Succeeded)
+            {
+                var errors = resetPassResult.Errors.Select(e => e.Description);
+                return BadRequest(new ResetPasswordResponseDTO { Errors = errors });
+            }
+
+            await _userManager.SetLockoutEndDateAsync(user, null);
+
+            return Ok(new ResetPasswordResponseDTO { IsResetPasswordSuccessful = true });
+        }
+
     }
 
    

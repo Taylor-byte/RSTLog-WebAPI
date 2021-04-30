@@ -92,6 +92,7 @@ namespace WebAPI
             var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
             services.AddSingleton(emailConfig);
             services.AddScoped<IEmailSender, EmailSender>();
+            
 
             services.AddSwaggerGen(c =>
             {

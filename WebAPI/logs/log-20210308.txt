@@ -1,8 +1,0 @@
-21-03-08 21:44:35.242 +00:00 [INF] Application Is Starting
-21-03-08 21:44:40.172 +00:00 [INF] Application started. Press Ctrl+C to shut down.
-21-03-08 21:44:40.187 +00:00 [INF] Hosting environment: Development
-21-03-08 21:44:40.189 +00:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
-21-03-08 21:44:40.255 +00:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
-21-03-08 21:44:40.964 +00:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 721.9996ms
-21-03-08 21:44:42.045 +00:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
-21-03-08 21:44:42.323 +00:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 278.1558ms

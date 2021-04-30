@@ -1,0 +1,160 @@
+21-04-23 09:00:21.360 +01:00 [INF] Application Is Starting
+21-04-23 09:00:28.043 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-04-23 09:00:28.897 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-04-23 09:00:28.897 +01:00 [INF] Hosting environment: Development
+21-04-23 09:00:28.897 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-04-23 09:00:29.014 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-04-23 09:00:29.362 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 351.9806ms
+21-04-23 09:00:30.098 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-04-23 09:00:30.181 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/favicon-32x32.png - -
+21-04-23 09:00:30.258 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+21-04-23 09:00:30.261 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/favicon-32x32.png - - - 200 628 image/png 80.1066ms
+21-04-23 09:00:30.558 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 459.8506ms
+21-04-23 09:01:15.473 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/token/refresh - -
+21-04-23 09:01:15.483 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:01:15.488 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/token/refresh - - - 204 - - 14.7008ms
+21-04-23 09:01:15.748 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44323/api/token/refresh application/json;+charset=utf-8 370
+21-04-23 09:01:15.748 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:01:23.849 +01:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+21-04-23 09:01:24.347 +01:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+21-04-23 09:01:24.351 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.TokenController.Refresh (WebAPI)'
+21-04-23 09:01:24.456 +01:00 [INF] Route matched with {action = "Refresh", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(WebAPI.DTOs.RefreshTokenDTO) on controller WebAPI.Controllers.TokenController (WebAPI).
+21-04-23 09:01:36.933 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:01:40.249 +01:00 [INF] Executed DbCommand (417ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+21-04-23 09:01:40.840 +01:00 [INF] Executed DbCommand (38ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+21-04-23 09:01:40.903 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+21-04-23 09:01:40.934 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+21-04-23 09:01:41.447 +01:00 [INF] Executed DbCommand (203ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [RefreshToken] = @p13, [RefreshTokenExpiryTime] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+SELECT @@ROWCOUNT;
+21-04-23 09:01:41.517 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.AuthResponseDTO'.
+21-04-23 09:01:41.622 +01:00 [INF] Executed action WebAPI.Controllers.TokenController.Refresh (WebAPI) in 17155.6205ms
+21-04-23 09:01:41.624 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.TokenController.Refresh (WebAPI)'
+21-04-23 09:01:41.661 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44323/api/token/refresh application/json;+charset=utf-8 370 - 200 409 application/json;+charset=utf-8 25913.9223ms
+21-04-23 09:01:41.830 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-23 09:01:41.830 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:01:41.831 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 204 - - 1.4069ms
+21-04-23 09:01:41.850 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-23 09:01:41.850 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:01:41.856 +01:00 [INF] Successfully validated the token.
+21-04-23 09:01:41.859 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-23 09:01:41.875 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-23 09:01:42.482 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:01:42.538 +01:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-23 09:01:43.097 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-23 09:01:43.223 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 1347.0436ms
+21-04-23 09:01:43.223 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-23 09:01:43.229 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 715 application/json;+charset=utf-8 1378.0025ms
+21-04-23 09:03:14.022 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/Customer/2 - -
+21-04-23 09:03:14.023 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:14.023 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/Customer/2 - - - 204 - - 0.7135ms
+21-04-23 09:03:14.045 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer/2 - -
+21-04-23 09:03:14.045 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:14.057 +01:00 [INF] Successfully validated the token.
+21-04-23 09:03:14.057 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-23 09:03:14.064 +01:00 [INF] Route matched with {action = "GetCustomer", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomer(Int32) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-23 09:03:14.089 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:03:14.628 +01:00 [INF] Executed DbCommand (361ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[HoursPurchased], [t].[HoursRemaining], [t].[Invoiced], [t].[InvoicedDate], [t].[Name], [t].[Notes], [t].[OnsitePurchased], [t].[Paid], [a].[Id], [a].[Comments], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM (
+    SELECT TOP(1) [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+    FROM [Customer] AS [c]
+    WHERE [c].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Audit] AS [a] ON [t].[Id] = [a].[CustomerId]
+ORDER BY [t].[Id], [a].[Id]
+21-04-23 09:03:14.679 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.CustomerDTO'.
+21-04-23 09:03:14.696 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomer (WebAPI) in 632.1949ms
+21-04-23 09:03:14.697 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomer (WebAPI)'
+21-04-23 09:03:14.697 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer/2 - - - 200 1946 application/json;+charset=utf-8 652.4692ms
+21-04-23 09:03:14.850 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/Audit?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-23 09:03:14.850 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:14.850 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/Audit?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 204 - - 0.7112ms
+21-04-23 09:03:14.937 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Audit?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-23 09:03:14.937 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:14.938 +01:00 [INF] Successfully validated the token.
+21-04-23 09:03:14.938 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.AuditController.GetAudits (WebAPI)'
+21-04-23 09:03:14.944 +01:00 [INF] Route matched with {action = "GetAudits", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAudits(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.AuditController (WebAPI).
+21-04-23 09:03:14.954 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:03:15.108 +01:00 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Comments], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId]
+FROM [Audit] AS [a]
+21-04-23 09:03:15.171 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.AuditDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-23 09:03:15.172 +01:00 [INF] Executed action WebAPI.Controllers.AuditController.GetAudits (WebAPI) in 227.9418ms
+21-04-23 09:03:15.173 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.AuditController.GetAudits (WebAPI)'
+21-04-23 09:03:15.173 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Audit?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 1613 application/json;+charset=utf-8 235.8264ms
+21-04-23 09:03:33.782 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/Audit/18 - -
+21-04-23 09:03:33.782 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:33.782 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/Audit/18 - - - 204 - - 0.5550ms
+21-04-23 09:03:33.866 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Audit/18 - -
+21-04-23 09:03:33.866 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:33.866 +01:00 [INF] Successfully validated the token.
+21-04-23 09:03:33.867 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.AuditController.GetAudit (WebAPI)'
+21-04-23 09:03:33.871 +01:00 [INF] Route matched with {action = "GetAudit", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAudit(Int32) on controller WebAPI.Controllers.AuditController (WebAPI).
+21-04-23 09:03:33.876 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:03:33.983 +01:00 [INF] Executed DbCommand (80ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Comments], [a].[CustomerId], [a].[Date], [a].[EmployeeId], [a].[Qty], [a].[RecordDate], [a].[TransTypeId], [t].[Id], [t].[Trans_Type], [e].[Id], [e].[Name]
+FROM [Audit] AS [a]
+INNER JOIN [TransType] AS [t] ON [a].[TransTypeId] = [t].[Id]
+LEFT JOIN [Employee] AS [e] ON [a].[EmployeeId] = [e].[Id]
+WHERE [a].[Id] = @__id_0
+21-04-23 09:03:33.993 +01:00 [INF] Executing OkObjectResult, writing value of type 'WebAPI.DTOs.AuditDTO'.
+21-04-23 09:03:33.994 +01:00 [INF] Executed action WebAPI.Controllers.AuditController.GetAudit (WebAPI) in 122.7618ms
+21-04-23 09:03:33.994 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.AuditController.GetAudit (WebAPI)'
+21-04-23 09:03:33.995 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Audit/18 - - - 200 156 application/json;+charset=utf-8 129.2671ms
+21-04-23 09:03:36.143 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-23 09:03:36.143 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:36.143 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 204 - - 0.5887ms
+21-04-23 09:03:36.150 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - -
+21-04-23 09:03:36.150 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:36.152 +01:00 [INF] Successfully validated the token.
+21-04-23 09:03:36.152 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-23 09:03:36.153 +01:00 [INF] Route matched with {action = "GetCustomers", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCustomers(WebAPI.DTOs.RequestParams) on controller WebAPI.Controllers.CustomerController (WebAPI).
+21-04-23 09:03:36.154 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:03:36.189 +01:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[HoursPurchased], [c].[HoursRemaining], [c].[Invoiced], [c].[InvoicedDate], [c].[Name], [c].[Notes], [c].[OnsitePurchased], [c].[Paid]
+FROM [Customer] AS [c]
+21-04-23 09:03:36.194 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.CustomerDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-23 09:03:36.197 +01:00 [INF] Executed action WebAPI.Controllers.CustomerController.GetCustomers (WebAPI) in 44.1415ms
+21-04-23 09:03:36.197 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.CustomerController.GetCustomers (WebAPI)'
+21-04-23 09:03:36.198 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Customer?pageNumber=1&pageSize=10&searchTerm=&orderBy=name - - - 200 715 application/json;+charset=utf-8 47.4155ms
+21-04-23 09:03:41.232 +01:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44323/api/Employee - -
+21-04-23 09:03:41.233 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:41.233 +01:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44323/api/Employee - - - 204 - - 1.1219ms
+21-04-23 09:03:41.277 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/api/Employee - -
+21-04-23 09:03:41.278 +01:00 [INF] CORS policy execution successful.
+21-04-23 09:03:41.278 +01:00 [INF] Successfully validated the token.
+21-04-23 09:03:41.288 +01:00 [INF] Authorization was successful.
+21-04-23 09:03:41.290 +01:00 [INF] Executing endpoint 'WebAPI.Controllers.EmployeeController.GetEmployees (WebAPI)'
+21-04-23 09:03:41.295 +01:00 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployees() on controller WebAPI.Controllers.EmployeeController (WebAPI).
+21-04-23 09:03:41.299 +01:00 [INF] Entity Framework Core 5.0.3 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+21-04-23 09:03:41.383 +01:00 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Employee] AS [e]
+21-04-23 09:03:41.395 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebAPI.DTOs.EmployeeDTO, WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+21-04-23 09:03:41.401 +01:00 [INF] Executed action WebAPI.Controllers.EmployeeController.GetEmployees (WebAPI) in 106.5859ms
+21-04-23 09:03:41.402 +01:00 [INF] Executed endpoint 'WebAPI.Controllers.EmployeeController.GetEmployees (WebAPI)'
+21-04-23 09:03:41.404 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/api/Employee - - - 200 93 application/json;+charset=utf-8 126.1167ms

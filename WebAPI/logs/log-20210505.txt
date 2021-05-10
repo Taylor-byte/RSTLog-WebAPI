@@ -1,0 +1,45 @@
+21-05-05 10:33:39.104 +01:00 [INF] Application Is Starting
+21-05-05 10:33:43.512 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-05-05 10:33:44.667 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-05-05 10:33:44.668 +01:00 [INF] Hosting environment: Development
+21-05-05 10:33:44.668 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-05-05 10:33:44.768 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-05-05 10:33:45.252 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 491.8538ms
+21-05-05 10:33:45.856 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-05-05 10:33:46.383 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 527.0593ms
+21-05-05 10:35:27.470 +01:00 [INF] Application Is Starting
+21-05-05 10:35:31.263 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-05-05 10:35:31.939 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-05-05 10:35:31.939 +01:00 [INF] Hosting environment: Development
+21-05-05 10:35:31.939 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-05-05 10:35:32.043 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-05-05 10:35:32.396 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 357.6330ms
+21-05-05 10:35:32.758 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-05-05 10:35:33.258 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 499.3617ms
+21-05-05 10:47:04.962 +01:00 [INF] Application Is Starting
+21-05-05 10:47:09.889 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-05-05 10:47:10.767 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-05-05 10:47:10.767 +01:00 [INF] Hosting environment: Development
+21-05-05 10:47:10.768 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-05-05 10:47:10.986 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-05-05 10:47:11.535 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 554.9417ms
+21-05-05 10:47:12.810 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-05-05 10:47:13.508 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 698.6819ms
+21-05-05 10:49:42.512 +01:00 [INF] Application Is Starting
+21-05-05 10:49:45.690 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-05-05 10:49:46.169 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-05-05 10:49:46.170 +01:00 [INF] Hosting environment: Development
+21-05-05 10:49:46.170 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-05-05 10:49:46.319 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-05-05 10:49:46.568 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 256.1484ms
+21-05-05 10:49:46.837 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-05-05 10:49:47.180 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 343.6492ms
+21-05-05 21:34:50.773 +01:00 [INF] Application Is Starting
+21-05-05 21:35:17.906 +01:00 [INF] User profile is available. Using 'C:\Users\jack.KUDOS-SOFTWARE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+21-05-05 21:35:19.014 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+21-05-05 21:35:19.014 +01:00 [INF] Hosting environment: Development
+21-05-05 21:35:19.027 +01:00 [INF] Content root path: C:\UniProjects\WebAPI\RSTLog-WebAPI\WebAPI
+21-05-05 21:35:19.125 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/index.html - -
+21-05-05 21:35:19.508 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/index.html - - - 200 - text/html;charset=utf-8 390.3516ms
+21-05-05 21:35:20.240 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - -
+21-05-05 21:35:20.766 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44323/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 524.2465ms

@@ -15,12 +15,6 @@ namespace WebAPI.Configurations
             CreateMap<Customer, CustomerDTO>().ReverseMap();
             CreateMap<Customer, CreateCustomerDTO>().ReverseMap();
 
-            CreateMap<Days, DaysDTO>().ReverseMap();
-            CreateMap<Days, CreateDaysDTO>().ReverseMap();
-
-            CreateMap<Hours, HoursDTO>().ReverseMap();
-            CreateMap<Hours, CreateHoursDTO>().ReverseMap();
-
             CreateMap<Employee, EmployeeDTO>().ReverseMap();
             CreateMap<Employee, CreateEmployeeDTO>().ReverseMap();
 
@@ -31,6 +25,12 @@ namespace WebAPI.Configurations
             CreateMap<Audit, CreateAuditDTO>().ReverseMap();
 
             CreateMap<ApiUser, UserDTO>().ReverseMap();
+
+            //CreateMap<Days, DaysDTO>().ReverseMap();
+            //CreateMap<Days, CreateDaysDTO>().ReverseMap();
+
+            //CreateMap<Hours, HoursDTO>().ReverseMap();
+            //CreateMap<Hours, CreateHoursDTO>().ReverseMap();
 
 
         }

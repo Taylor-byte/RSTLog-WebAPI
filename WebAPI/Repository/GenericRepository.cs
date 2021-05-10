@@ -82,7 +82,7 @@ namespace WebAPI.Repository
         public async Task<PagedList<Audit>> GetAudits(RequestParams requestParams)
         {
 
-            var audits = await _context.Audit
+            var audits = await _context.Audit.Include("TransType")
                //.Search(requestParams.SearchTerm)
                .ToListAsync();
 

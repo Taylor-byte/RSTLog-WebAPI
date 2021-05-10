@@ -43,6 +43,8 @@ namespace WebAPI.DTOs
     {
         public int Id { get; set; }
 
+        public TransTypeDTO TransType { get; set; }
+
         //public IList<HoursDTO> Hours { get; set; }
 
         //public IList<CustomerDTO> Customer { get; set; }

@@ -160,7 +160,7 @@ namespace WebAPI.Controllers
 
             if (!ModelState.IsValid)
                 return BadRequest(errorResponse);
-
+            //finds the email of the users account
             var user = await _userManager.FindByEmailAsync(resetPasswordDTO.Email);
             if (user == null)
                 return BadRequest(errorResponse);

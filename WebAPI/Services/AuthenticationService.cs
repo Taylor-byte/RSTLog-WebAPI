@@ -18,6 +18,7 @@ namespace WebAPI.Services
     {
         private readonly JwtConfiguration _jwtSettings;
         private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler;
+        //pass the api user into the ideneity framework user manager
         private readonly UserManager<ApiUser> _userManager;
 
         public AuthenticationService(IOptions<JwtConfiguration> jwtSettings,
@@ -27,7 +28,7 @@ namespace WebAPI.Services
             _jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             _userManager = userManager;
         }
-
+        //gets token from the endpoint
         public async Task<string> GetToken(ApiUser user)
         {
             var signingCredentials = GetSigningCredentials();
@@ -44,7 +45,7 @@ namespace WebAPI.Services
 
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
-
+        //lists the current claims
         private async Task<IEnumerable<Claim>> GetClaims(ApiUser user)
         {
             var claims = new List<Claim>
@@ -60,7 +61,7 @@ namespace WebAPI.Services
 
             return claims;
         }
-
+        //This makes the toekn using the authorised credentials, claims, expiry time. See jwt doumentation for the structure of a token.
         private JwtSecurityToken GenerateTokenOptions
             (SigningCredentials signingCredentials, IEnumerable<Claim> claims)
         {
@@ -73,7 +74,7 @@ namespace WebAPI.Services
 
             return tokenOptions;
         }
-
+        //Generates a refresh token if needed due to expiratrion or browser being cleared. 
         public string GenerateRefreshToken()
         {
             var randomNumber = new byte[32];
@@ -84,6 +85,7 @@ namespace WebAPI.Services
             }
         }
 
+        //takes the validations it can from and expired token and issues a new token from the security handler. 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
             var tokenValidationParameters = new TokenValidationParameters

@@ -12,6 +12,7 @@ namespace WebAPI.IRepository
 {
     public interface IGenericRepository<T> where T : class
     {
+        //interface which the generic repositiry impliments with HTTP verb methods
         Task<IList<T>> GetAll(
             Expression<Func<T, bool>> expression = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
@@ -20,7 +21,7 @@ namespace WebAPI.IRepository
 
         Task<PagedList<Customer>> GetCustomers(RequestParams requestParams);
 
-        Task<PagedList<Audit>> GetAudits(RequestParams requestParams);
+        Task<PagedList<Audit>> GetAudits(RequestParams requestParams, int customerId);
 
         //Task<IEnumerable<TransType>> GetTransTypes();
         //Task<TransType> GetTransType(int departmentId);

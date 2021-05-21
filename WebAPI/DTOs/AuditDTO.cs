@@ -8,7 +8,7 @@ namespace WebAPI.DTOs
     public class CreateAuditDTO
     {
 
-        
+        //DTOs which are mapped to the domain models using automapper
 
         public int CustomerId { get; set; }
 

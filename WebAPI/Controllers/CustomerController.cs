@@ -22,7 +22,9 @@ namespace WebAPI.Controllers
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        //logging for API calls made
         private readonly ILogger<CustomerController> _logger;
+        //mapper to tie the DTOs to the domain models
         private readonly IMapper _mapper;
 
         public CustomerController(IUnitOfWork unitOfWork, ILogger<CustomerController> logger,
@@ -34,7 +36,7 @@ namespace WebAPI.Controllers
 
             _mapper = mapper;
         }
-
+        //HTTP methods for GET, PUT, POST
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -45,6 +47,7 @@ namespace WebAPI.Controllers
                 var customers = await _unitOfWork.Customer.GetCustomers(requestParams);
                 //new
                 string param = System.Text.Json.JsonSerializer.Serialize(requestParams);
+                //pagination headers
                 Response.Headers.Add("X-Pagination", param);
                 Response.Headers.Add("Access-Control-Expose-Headers", "X-Pagination");
 
@@ -76,7 +79,7 @@ namespace WebAPI.Controllers
             }
         }
 
-        //[Authorize(Roles = "Administrator")]
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -141,7 +144,7 @@ namespace WebAPI.Controllers
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
-
+        //decided not to let users delete customers to keep historical records
         [HttpDelete("id:int")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -175,6 +178,5 @@ namespace WebAPI.Controllers
                 return StatusCode(500, "Internal Server Error. Please try again later.");
             }
         }
-
     }
 }

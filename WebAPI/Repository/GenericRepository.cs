@@ -15,6 +15,7 @@ namespace WebAPI.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
+        
         private readonly DatabaseContext _context;
         private readonly DbSet<T> _db;
 
@@ -26,7 +27,7 @@ namespace WebAPI.Repository
 
 
         }
-
+        //Tasks which the unit of work uses and maps between the interface and repositoryx
         public async Task Delete(int id)
         {
             var entity = await _db.FindAsync(id);
@@ -79,11 +80,12 @@ namespace WebAPI.Repository
             return await query.AsNoTracking().ToListAsync();
         }
 
-        public async Task<PagedList<Audit>> GetAudits(RequestParams requestParams)
+        public async Task<PagedList<Audit>> GetAudits(RequestParams requestParams, int customerId)
         {
 
             var audits = await _context.Audit.Include("TransType")
-               //.Search(requestParams.SearchTerm)
+                .Where(a => a.CustomerId == customerId)
+              // .Search(requestParams.SearchTerm)
                .ToListAsync();
 
             return PagedList<Audit>

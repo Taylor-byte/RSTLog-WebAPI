@@ -15,6 +15,7 @@ namespace WebAPI
     {
         public static void Main(string[] args)
         {
+            //Configuration for the API logger for test driven development
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File(
                     path: "C:\\UniProjects\\WebAPI\\RSTLog-WebAPI\\WebAPI\\logs\\log-.txt",

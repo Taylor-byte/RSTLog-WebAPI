@@ -8,6 +8,7 @@ namespace WebAPI.DTOs
 {
     public class ForgotPasswordDTO
     {
+        //DTOs which are mapped to the domain models using automapper
         [Required]
         [EmailAddress]
         public string Email { get; set; }

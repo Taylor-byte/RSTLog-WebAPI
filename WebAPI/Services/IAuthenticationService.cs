@@ -10,6 +10,7 @@ namespace WebAPI.Services
 {
     public interface IAuthenticationService
     {
+        //interface which th authentication service implements.
        Task<string> GetToken(ApiUser user);
        string GenerateRefreshToken();
        ClaimsPrincipal GetPrincipalFromExpiredToken(string token);

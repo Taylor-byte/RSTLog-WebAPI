@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI.DTOs
 {
+    //DTOs which are mapped to the domain models using automapper
     public class CreateTransTypeDTO
     {
 

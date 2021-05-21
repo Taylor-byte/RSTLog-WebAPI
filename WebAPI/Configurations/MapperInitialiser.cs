@@ -10,6 +10,7 @@ namespace WebAPI.Configurations
 {
     public class MapperInitialiser : Profile
     {
+        // class which explicitly maps Models to DTOs. Also mapped both ways using .ReverseMap
         public MapperInitialiser()
         {
             CreateMap<Customer, CustomerDTO>().ReverseMap();

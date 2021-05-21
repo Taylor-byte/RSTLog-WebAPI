@@ -10,7 +10,8 @@ namespace WebAPI.Models
 {
     public class DatabaseContext : IdentityDbContext<ApiUser>
     {
-
+        //Application context for code first migrations
+        //add models using DbSet
         public DatabaseContext(DbContextOptions options) : base(options)
         {
 
@@ -28,6 +29,7 @@ namespace WebAPI.Models
 
         public DbSet<TransType> TransType { get; set; }
 
+        //when the model is created, automaticall seed the database with the user roles specified in Entites\RoleConfiguration.cs
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

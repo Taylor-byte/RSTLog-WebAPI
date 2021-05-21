@@ -34,11 +34,11 @@ namespace WebAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAudits([FromQuery] RequestParams requestParams)
+        public async Task<IActionResult> GetAudits([FromQuery] RequestParams requestParams, int customerId)
         {
             try
             {
-                var audits = await _unitOfWork.Audit.GetAudits(requestParams);
+                var audits = await _unitOfWork.Audit.GetAudits(requestParams, customerId);
                 //new
                 string param = System.Text.Json.JsonSerializer.Serialize(requestParams);
                 Response.Headers.Add("X-Pagination", param);

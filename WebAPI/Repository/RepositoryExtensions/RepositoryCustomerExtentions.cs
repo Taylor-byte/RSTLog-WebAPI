@@ -11,27 +11,20 @@ namespace WebAPI.Repository.RepositoryExtensions
 {
     public static class RepositoryCustomerExtentions
     {
-
+        //Search function for customer file.
         public static IQueryable<Customer> Search(this IQueryable<Customer> customers, string searchTerm)
         {
+            //check if the search term sent in the request is empty
             if (string.IsNullOrWhiteSpace(searchTerm))
                 return customers;
-
+            //Trim the sent search term and set to lower case
             var lowerCaseSearchTerm = searchTerm.Trim().ToLower();
-
+            //return all customers that include the search term in the name. 
             return customers.Where(c => c.Name.ToLower().Contains(lowerCaseSearchTerm));
         }
 
-        //public static IQueryable<Audit> Search(this IQueryable<Audit> audits, string searchTerm)
-        //{
-        //    if (string.IsNullOrWhiteSpace(searchTerm))
-        //        return audits;
 
-        //    var lowerCaseSearchTerm = searchTerm.Trim().ToLower();
-
-        //    return audits.Where(c => c..ToLower().Contains(lowerCaseSearchTerm));
-        //}
-
+        //Sort function not used. Put into roadmap for if the tables get updated.
         public static IQueryable<Customer> Sort(this IQueryable<Customer> customers,
             string orderByQueryString)
         {

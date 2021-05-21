@@ -8,7 +8,7 @@ namespace WebAPI.DTOs
 {
     public class ResetPasswordDTO
     {
-
+		//DTOs which are mapped to the domain models using automapper
 		[Required(ErrorMessage = "Password is required")]
 		public string Password { get; set; }
 		[Compare(nameof(Password),

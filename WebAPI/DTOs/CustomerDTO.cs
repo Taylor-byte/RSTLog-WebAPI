@@ -8,7 +8,7 @@ namespace WebAPI.DTOs
 {
     public class CreateCustomerDTO
     {
-
+        //DTOs which are mapped to the domain models using automapper
         [Required(ErrorMessage = "Name Field is required")]
         public string Name { get; set; }
 

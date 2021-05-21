@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-
+        //controller which allows the front end to retrieve a refresh token from the API for authorisation
         private readonly UserManager<ApiUser> _usermanager;
         private readonly IAuthenticationService _authenticationService;
 

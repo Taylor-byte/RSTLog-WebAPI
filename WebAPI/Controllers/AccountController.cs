@@ -45,7 +45,7 @@ namespace WebAPI.Controllers
         }
 
 
-
+        //HTTP methods endpoints for account administration
         [HttpPost]
         [Route("register")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
@@ -107,13 +107,13 @@ namespace WebAPI.Controllers
                     ErrorMessage = "Invalid Authentication"
                 });
             }
-
+            //check tokens and issue them
             var token = await _authenticationService.GetToken(user);
 
             user.RefreshToken = _authenticationService.GenerateRefreshToken();
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
             await _userManager.UpdateAsync(user);
-
+            //set tokens on succesful login
             return Ok(new AuthResponseDTO {
                 IsAuthSuccessful = true,
                 Token = token,
@@ -140,7 +140,7 @@ namespace WebAPI.Controllers
             };
 
             var callback = QueryHelpers.AddQueryString(forgotPasswordDTO.ClientURI, param);
-
+            //builds the string for the reset password email
             var message = new Message(new string[] { user.Email }, "Reset password token",
                 callback, null);
 

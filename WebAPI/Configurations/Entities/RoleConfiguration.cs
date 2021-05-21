@@ -10,6 +10,7 @@ namespace WebAPI.Configurations.Entities
 {
     public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
+        //Add roles to the AspNetUserRoles table when a code first migration is run.
         public void Configure(EntityTypeBuilder<IdentityRole> builder)
         {
             builder.HasData(

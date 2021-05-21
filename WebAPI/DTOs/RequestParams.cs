@@ -7,6 +7,7 @@ namespace WebAPI.DTOs
 {
     public class RequestParams
     {
+        //DTOs which are mapped to the domain models using automapper
         const int maxPageSize = 25;
 
         public int PageNumber { get; set; } = 1;

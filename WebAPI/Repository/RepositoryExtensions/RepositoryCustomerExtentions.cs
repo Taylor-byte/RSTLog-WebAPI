@@ -24,7 +24,7 @@ namespace WebAPI.Repository.RepositoryExtensions
         }
 
 
-        //Sort function not used. Put into roadmap for if the tables get updated.
+        //Sort function not used as search was so effective. Put into roadmap for if the tables get updated.
         public static IQueryable<Customer> Sort(this IQueryable<Customer> customers,
             string orderByQueryString)
         {

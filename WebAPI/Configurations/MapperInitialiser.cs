@@ -27,11 +27,7 @@ namespace WebAPI.Configurations
 
             CreateMap<ApiUser, UserDTO>().ReverseMap();
 
-            //CreateMap<Days, DaysDTO>().ReverseMap();
-            //CreateMap<Days, CreateDaysDTO>().ReverseMap();
-
-            //CreateMap<Hours, HoursDTO>().ReverseMap();
-            //CreateMap<Hours, CreateHoursDTO>().ReverseMap();
+         
 
 
         }
